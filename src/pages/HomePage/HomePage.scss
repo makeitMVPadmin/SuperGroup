@@ -1,0 +1,46 @@
+.home{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-bottom: 2px black solid;
+    &__group{
+        display: flex;
+        flex-wrap: wrap;
+        width: 13rem;
+        justify-content: space-between;
+        &-title{
+            font-size: 1rem;
+            padding: 0.3rem;
+            border-radius: 0.5rem;
+            background-color: silver;
+        }
+    }
+}
+
+.filters{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    &__one{
+        display: flex;
+        align-items: center;
+        &-content{
+            font-size: 1rem;
+            padding: 0.3rem;
+            border-radius: 0.5rem;
+            background-color: silver;
+            margin: 0 0.5rem;
+        }
+    }
+    &__two{
+        display: flex;
+        &-content{
+            font-size: 1rem;
+            padding: 0.3rem;
+            border-radius: 0.5rem;
+            background-color: silver;
+            margin: 0 0.5rem;
+        }
+
+    }
+}

@@ -1,0 +1,45 @@
+/* SidebarParent */
+
+.SidebarParent {
+    background: #cf3d2a;
+    width: 13rem;
+    height: 100vh;
+    margin: 0.7rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    &__title{
+        font-size: 1.2rem;
+        padding: 1.5rem;
+        font-weight: 600;
+    }
+}
+
+
+
+//   /* SidebarItem */
+// .SidebarItem {
+//     padding: 16px 24px;
+//     transition: all 0.25s ease-in-out;
+//     margin: 4px 12px;
+//     border-radius: 4px;
+// }
+
+// .SidebarItem p {
+//     color: white;
+//     font-weight: bold;
+//     text-decoration: none;
+// }
+
+// .SidebarItem:hover {
+//     cursor: pointer;
+// }
+
+// .SidebarItem:hover:not(:first-child) {
+//     background: #c34a36;
+// }
+
+//   /* Change the background color if 'active' class is added */
+// .SidebarItem.active {
+//     background: #b15b00;
+// }
