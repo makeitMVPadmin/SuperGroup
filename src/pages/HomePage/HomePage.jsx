@@ -24,6 +24,51 @@ const Home = () => {
         {/* <img src="" alt="" className="filters_two-logo" /> */}
       </div>
     </nav>
+    <section className="gallery">
+      <div className="chatlink">
+        <div className="chatlink__banner">
+          <p className="chatlink__banner-title">Chat Name</p>
+        </div>
+        <div className="chatlink__content">
+          <p className="chatlink__content-text">Key Insights</p>
+          <p className="chatlink__content-text">Summary</p>
+        </div>
+        <div className="chatlink__filters">
+          <div className="chatlink__filters-text">filter</div>
+          <div className="chatlink__filters-text">filter</div>
+          <div className="chatlink__filters-text">filter</div>
+        </div>
+      </div>
+{/* Copied for Demo purposes. Will be responsive with Data */}
+      <div className="chatlink">
+        <div className="chatlink__banner">
+          <p className="chatlink__banner-title">Chat Name</p>
+        </div>
+        <div className="chatlink__content">
+          <p className="chatlink__content-text">Key Insights</p>
+          <p className="chatlink__content-text">Summary</p>
+        </div>
+        <div className="chatlink__filters">
+          <div className="chatlink__filters-text">filter</div>
+          <div className="chatlink__filters-text">filter</div>
+          <div className="chatlink__filters-text">filter</div>
+        </div>
+      </div>
+      <div className="chatlink">
+        <div className="chatlink__banner">
+          <p className="chatlink__banner-title">Chat Name</p>
+        </div>
+        <div className="chatlink__content">
+          <p className="chatlink__content-text">Key Insights</p>
+          <p className="chatlink__content-text">Summary</p>
+        </div>
+        <div className="chatlink__filters">
+          <div className="chatlink__filters-text">filter</div>
+          <div className="chatlink__filters-text">filter</div>
+          <div className="chatlink__filters-text">filter</div>
+        </div>
+      </div>
+    </section>
     </>
     
   );

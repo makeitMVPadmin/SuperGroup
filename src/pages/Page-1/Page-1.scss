@@ -1,0 +1,28 @@
+.SearchbarParent{
+    background: #cf3d2a;
+    width: 13rem;
+    height: 100vh;
+    margin: 0.7rem;
+    border-radius: 0.5rem;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    flex-direction: column;
+    &__pfp{
+        background-color: gray;
+        border-radius: 50%;
+        width: 6rem;
+        height: 6rem;
+        margin-bottom: 1rem;
+    }
+    &__input{
+        height: 1.5rem;
+        width: 10rem;
+    }
+    &__text{
+        margin-top: 1rem;
+        width: 100%;
+        border-bottom: 1px black solid;
+    }
+}

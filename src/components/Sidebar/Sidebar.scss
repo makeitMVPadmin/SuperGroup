@@ -7,12 +7,27 @@
     margin: 0.7rem;
     border-radius: 0.5rem;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     &__title{
         font-size: 1.2rem;
         padding: 1.5rem;
         font-weight: 600;
     }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        height: 20rem;
+        width: 100%;
+        justify-content: space-around;
+        &-content{
+            width: 100%;
+            padding: 1rem;
+            border: 1px black solid;
+            text-align: center;
+        }
+    }
+
 }
 
 

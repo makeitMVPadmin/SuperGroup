@@ -1,8 +1,11 @@
+import "./Page-1.scss"
+
 function Page1(props) {
     return (
-        <div>
-            <h1>Page 1</h1>
-            <p>Lorem ipsum dolor</p>
+        <div className="SearchbarParent">
+            <div className="SearchbarParent__pfp"></div>
+            <input className="SearchbarParent__input" type="text" placeholder="Search previous chats.."></input>
+            <p className="SearchbarParent__text">Previous Searches..</p>
         </div>
     );
 }

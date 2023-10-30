@@ -44,3 +44,43 @@
 
     }
 }
+
+.gallery{
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.chatlink{
+    width: 16rem;
+    height: 13rem;
+    background-color: red;
+    border-radius: 0.5rem;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    &__banner{
+        // border-bottom: 1px black solid;
+        // margin-bottom: 1rem;
+        &-title{
+            // padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+    }
+    &__content{
+        &-text{
+            padding: 0.5rem 0;
+        }
+    }
+    &__filters{
+        display: flex;
+        justify-content: center;
+        &-text{
+            padding: 0.3rem;
+            border-radius: 0.5rem;
+            background-color: silver;
+            margin: 0 0.5rem;
+        }
+    }
+}

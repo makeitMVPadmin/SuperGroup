@@ -19,6 +19,12 @@ function Sidebar({defaultActive}) {
                     })
                 } */}
                 <p className="SidebarParent__title">Settings</p>
+                <div className="SidebarParent__item">
+                  <p className="SidebarParent__item-content">Setting item 1</p>
+                  <p className="SidebarParent__item-content">Setting item 2</p>
+                  <p className="SidebarParent__item-content">Setting item 3</p>
+                  <p className="SidebarParent__item-content">Setting item 4</p>
+                </div>
             </div>
         </>
     );
