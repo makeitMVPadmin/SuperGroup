@@ -1,12 +1,34 @@
 import "./LandingPage.scss";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { db } from "../../firebase-config";
 
 const LandingPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [linkedIn, setLinkedIn] = useState("");
 
+  const waitlistCollectionRef = collection(db, "waitlist");
+  const addToWaitlist = async ({ name, email, linkedIn }) => {
+    await addDoc(waitlistCollectionRef, {
+      name,
+      email,
+      linkedIn,
+      createdAt: serverTimestamp(),
+    });
+  };
+  function isEmailValid(email) {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    return emailRegex.test(email);
+  }
+  function isLinkedInValid(linkedIn) {
+    // This regex pattern checks for common LinkedIn URL formats
+    const linkedInRegex =
+      /^(https?:\/\/)?(www\.)?linkedin\.com\/in\/[A-Za-z0-9_-]+\/?$/;
+    return linkedInRegex.test(linkedIn);
+  }
+
+  //funtion to update state variables
   const handleChange = (event) => {
     switch (event.target.name) {
       case "name":
@@ -22,12 +44,36 @@ const LandingPage = () => {
         break;
     }
   };
+
+  //function to handle form submission, data validation and submit data to firebase
   const handleSubmit = (event) => {
     event.preventDefault();
 
     // validate form data here
 
-    // submit form data here
+    if (name.trim() === "" || email.trim() === "" || !isEmailValid(email)) {
+      // set error states to provide feedback to the user?
+      console.error("Please fill in all required fields.");
+      return; // Prevent further execution
+    }
+    if (linkedIn && !isLinkedInValid(linkedIn)) {
+      console.error("Please fill in LinkedIn link correctly");
+      return; // Prevent further execution
+    }
+
+    // submit form data here - sending data to firebase
+
+    addToWaitlist({
+      name,
+      email,
+      linkedIn,
+    });
+
+    //reset state variables
+    setName("");
+    setEmail("");
+    setLinkedIn("");
+    event.target.reset();
   };
 
   return (
@@ -109,7 +155,9 @@ const LandingPage = () => {
           value={linkedIn}
           onChange={handleChange}
         ></input>
-        <button type="submit">Submit</button>
+        <button className="landing__btn-submit" type="submit">
+          Submit
+        </button>
         {/* https://react.dev/reference/react-dom/components/input#reading-the-input-values-when-submitting-a-form */}
       </form>
     </main>
