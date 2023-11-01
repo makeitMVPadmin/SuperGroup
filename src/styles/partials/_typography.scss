@@ -1,17 +1,16 @@
 @use "variables" as *;
 
+//fonts for headers
 @font-face {
-  font-family: "Avenir";
-  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("otf"),
-    url("../../assets/fonts/AvenirNextLTPro.ttf") format("ttf");
-  font-weight: 400;
+  font-family: "Corben", serif;
+  src: url("../../assets/fonts/Corben-Bold.ttf") format("ttf");
+  font-weight: 700;
   font-style: normal;
 }
-
+//fonts for body text
 @font-face {
-  font-family: "Avenir";
-  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("otf"),
-    url("../../assets/fonts/AvenirNextLTProBold.ttf") format("ttf");
+  font-family: "Poppins", sans-serif;
+  src: url("../../assets/fonts/Poppins-Bold.ttf") format("ttf");
   font-weight: 700;
   font-style: normal;
 }
