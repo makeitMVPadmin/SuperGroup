@@ -1,7 +1,15 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
 .landing {
   &__title {
+    @include font-h1-body;
+    font-family: "Corben", serif;
   }
   &__description {
+    font-family: "Poppins", sans-serif;
   }
   &__features {
   }
@@ -10,8 +18,10 @@
   &__process {
   }
   &__items {
+    font-family: "Gilroy";
   }
   &__item {
+    font-family: "Gilroy";
   }
   &__btn {
   }
