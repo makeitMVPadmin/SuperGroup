@@ -1,0 +1,80 @@
+@use "variables" as *;
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+//mobile text styles
+
+@mixin font-page-header {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+@mixin font-section-header {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+@mixin font-subheader {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+}
+
+@mixin font-body-copy {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+@mixin font-button-label {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+@mixin font-form-label {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+//desktop & tablet text styles
+
+@mixin font-page-header-dt {
+  font-size: 2.0625rem;
+  line-height: 2.75rem;
+  font-weight: 700;
+}
+
+@mixin font-section-header-dt {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+@mixin font-subheader-dt {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 700;
+}
+@mixin font-body-copy-dt {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+}
+
+@mixin font-button-label-dt {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}

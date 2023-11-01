@@ -2,6 +2,11 @@ import "./LandingPage.scss";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../../firebase-config";
+import {
+  collection, //function that allows to make a reference to a collection in firebase
+  addDoc,
+  serverTimestamp, //function from firebase that creates a timestamp
+} from "firebase/firestore";
 
 const LandingPage = () => {
   const [name, setName] = useState("");
