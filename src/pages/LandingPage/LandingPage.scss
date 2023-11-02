@@ -4,6 +4,7 @@
 @use "../../styles/partials/global" as *;
 
 .landing {
+  padding: 1rem;
   &__title {
     @include font-h1-body;
     font-family: "Corben", serif;
@@ -26,6 +27,8 @@
   &__btn {
   }
   &__form {
+    display: flex;
+    flex-direction: column;
   }
   &__label {
   }

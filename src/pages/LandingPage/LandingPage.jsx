@@ -33,32 +33,20 @@ const LandingPage = () => {
     return linkedInRegex.test(linkedIn);
   }
 
-  //funtion to update state variables
-  const handleChange = (event) => {
-    switch (event.target.name) {
-      case "name":
-        setName(event.target.value);
-        break;
-      case "email":
-        setEmail(event.target.value);
-        break;
-      case "linkedIn":
-        setLinkedIn(event.target.value);
-        break;
-      default:
-        break;
-    }
-  };
-
   //function to handle form submission, data validation and submit data to firebase
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // validate form data here
+    // validating form data
 
-    if (name.trim() === "" || email.trim() === "" || !isEmailValid(email)) {
+    if (name.trim() === "" || email.trim() === "") {
       // set error states to provide feedback to the user?
       console.error("Please fill in all required fields.");
+      return; // Prevent further execution
+    }
+    if (!isEmailValid(email)) {
+      // set error states to provide feedback to the user?
+      console.error("Incorrect email format.");
       return; // Prevent further execution
     }
     if (linkedIn && !isLinkedInValid(linkedIn)) {
@@ -66,7 +54,7 @@ const LandingPage = () => {
       return; // Prevent further execution
     }
 
-    // submit form data here - sending data to firebase
+    // submiting form data - sending data to firebase
 
     addToWaitlist({
       name,
@@ -74,7 +62,7 @@ const LandingPage = () => {
       linkedIn,
     });
 
-    //reset state variables
+    //reseting state variables
     setName("");
     setEmail("");
     setLinkedIn("");
@@ -132,7 +120,7 @@ const LandingPage = () => {
           type="text"
           placeholder="Full Name"
           value={name}
-          onChange={handleChange}
+          onChange={(e) => setName(e.target.value)}
         ></input>
 
         <label htmlFor="email" className="field__label">
@@ -142,10 +130,10 @@ const LandingPage = () => {
           id="email"
           className="landing__input"
           name="email"
-          type="email"
+          type="text"
           placeholder="Email"
           value={email}
-          onChange={handleChange}
+          onChange={(e) => setEmail(e.target.value)}
         ></input>
 
         <label htmlFor="linkedIn" className="field__label">
@@ -158,7 +146,7 @@ const LandingPage = () => {
           type="text"
           placeholder="https://linkedin.com/in/"
           value={linkedIn}
-          onChange={handleChange}
+          onChange={(e) => setLinkedIn(e.target.value)}
         ></input>
         <button className="landing__btn-submit" type="submit">
           Submit
