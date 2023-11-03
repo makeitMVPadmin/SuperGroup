@@ -1,0 +1,139 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.landing {
+  font-family: "Gilroy";
+  background-color: $primary-white;
+  &__header {
+    padding: 0.81rem 8rem 0.81rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__header-logo {
+    width: 16rem;
+    height: 4.9375rem;
+    flex-shrink: 0;
+  }
+  &__header-btn {
+    width: 11.25rem;
+    height: 3.875rem;
+    @include font-h1-button;
+    background-color: $primary-white;
+    border: 6px solid $primary-yellow;
+  }
+  &__hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__hero-container {
+    display: flex;
+    align-items: center;
+  }
+  &__hero-img {
+    width: 20rem;
+  }
+
+  &__title {
+    @include font-h1-page-header;
+    font-family: "Corben", serif;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+  &__subtitle {
+    font-family: "Corben", serif;
+    @include font-h2-subheader;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+  &__btn {
+    border: 3px solid $primary-black;
+    margin: 1.75rem;
+    width: 27.5rem;
+    padding: 1rem;
+    background-color: $primary-white;
+    @include font-h1-button;
+  }
+  &__features {
+    text-align: center;
+    background-color: $secondary-cream;
+  }
+  &__features-container {
+    display: flex;
+    gap: 2rem;
+  }
+  &__feature {
+    border-radius: 3.75rem;
+    background: rgba(255, 210, 47, 0.4);
+    padding: 2.25rem;
+  }
+
+  &__description {
+    font-family: "Corben", serif;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    // font-family: "Poppins", sans-serif;
+  }
+  &__process {
+  }
+  &__process-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__step {
+    display: flex;
+    margin-bottom: 7.63rem;
+    &--first {
+      background-color: rgba(9, 84, 176, 0.06);
+      border: 8px solid $secondary-dark-blue;
+    }
+    &--second {
+      background-color: rgba(255, 210, 47, 0.15);
+      border: 8px solid $primary-yellow;
+    }
+    &--third {
+      background-color: rgba(255, 112, 112, 0.12);
+      border: 8px solid $secondary-red;
+    }
+  }
+  &__img {
+    border: none;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__label {
+  }
+  &__input {
+  }
+  &__btn-submit {
+  }
+  &__footer {
+    background-color: $secondary-cream;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+  }
+  &__footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__footer-subheading {
+    font-family: "Corben", serif;
+  }
+  &__items {
+    text-align: left;
+  }
+  &__item {
+    font-family: "Gilroy";
+    list-style-type: none;
+  }
+}
