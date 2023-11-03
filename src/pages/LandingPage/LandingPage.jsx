@@ -7,6 +7,9 @@ import {
   addDoc,
   serverTimestamp, //function from firebase that creates a timestamp
 } from "firebase/firestore";
+import headerLogo from "../../assets/logos/logo8.svg";
+import logo from "../../assets/logos/logo13.svg";
+import hero from "../../assets/images/hero.png";
 
 const LandingPage = () => {
   const [name, setName] = useState("");
@@ -71,40 +74,98 @@ const LandingPage = () => {
 
   return (
     <main className="landing">
-      <h1 className="landing__title">
-        Unlock the Power of AI-Driven Collaboration
-      </h1>
-      <p className="landing__description">
-        Join the Future of Collaboration! Be the first to experience SuperGroup,
-        where AI meets seamless collaboration.
-      </p>
-      <section className="landing__features">
-        <h4 className="landing__subtitle">Key Features:</h4>
-        <p>
-          AI-Enhanced Collaboration: Leverage the power of AI to enhance your
-          team's communication and decision-making. Intuitive Interface: Enjoy a
-          user-friendly and intuitive chat interface with seamless AI
-          integration. Secure and Private: Your data is encrypted and protected
-          to ensure the highest standards of security and privacy.
-        </p>
-      </section>
-      <section className="landing__process">
-        <h4 className="landing__subtitle">How it Works:</h4>
-        <ul className="landing__items">
-          <li className="landing__item">
-            Step 1: Join the waitlist by entering your email.
-          </li>
-          <li className="landing__item">
-            Step 2: Receive exclusive updates and early access notifications.
-          </li>
-          <li className="landing__item">
-            Step 3: Be among the first to experience the future of collaboration
-            with SuperGroup.
-          </li>
-        </ul>
-        <Link to="#form">
+      <header className="landing__header">
+        <img
+          className="landing__header-logo"
+          src={headerLogo}
+          alt="MakeitMVP header logo"
+        />
+        <Link to="/#landing__form">
+          <button className="landing__header-btn">Sign Up</button>
+        </Link>
+      </header>
+      <section className="landing__hero">
+        <div className="landing__hero-container">
+          <h1 className="landing__title">
+            Unlock the Power of AI-Driven Collaboration
+          </h1>
+          <img
+            className="landing__hero-img"
+            src={hero}
+            alt="three people strategizing"
+          />
+        </div>
+        <h2 className="landing__subtitle">
+          Join the Future of Collaboration! Be the first to experience
+          SuperGroup, where AI meets seamless collaboration.
+        </h2>
+
+        <Link to="/#landing__form">
           <button className="landing__btn">Sign Up</button>
         </Link>
+      </section>
+      <section className="landing__features">
+        <h2 className="landing__subtitle">Our Key Features:</h2>
+        <div className="landing__features-container">
+          <article className="landing__feature">
+            <h2 className="landing__subtitle">AI-Enhanced Collaboration</h2>
+            <p className="landing__description">
+              Leverage the power of AI to enhance your team's communication and
+              decision-making.
+            </p>
+          </article>
+          <article className="landing__feature">
+            <h2 className="landing__subtitle">Intuitive Interface</h2>
+            <p className="landing__description">
+              Enjoy a user-friendly and intuitive chat interface with seamless
+              AI integration.
+            </p>
+          </article>
+          <article className="landing__feature">
+            <h2 className="landing__subtitle">Secure and Private</h2>
+            <p className="landing__description">
+              Your data is encrypted and protected to ensure the highest
+              standards of security and privacy.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section className="landing__process">
+        <div className="landing__process-container">
+          <img className="landing__logo" src={logo} alt="" />
+          <h4 className="landing__subtitle">How it Works:</h4>
+          <div className="landing__step landing__step--first">
+            <div className="landing__body">
+              <h2 className="landing__subtitle">Step 1:</h2>
+              <p className="landing__description">
+                Join the waitlist by entering your email.
+              </p>
+            </div>
+            <img className="landing__logo" src={logo} alt="" />
+          </div>
+          <div className="landing__step landing__step--second">
+            <img className="landing__logo" src={logo} alt="" />
+            <div className="landing__body">
+              <h2 className="landing__subtitle">Step 2:</h2>
+              <p className="landing__description">
+                Receive exclusive updates and early access notifications.
+              </p>
+            </div>
+          </div>
+          <div className="landing__step landing__step--third">
+            <div className="landing__body">
+              <h2 className="landing__subtitle">Step 3:</h2>
+              <p className="landing__description">
+                Be among the first to experience the future of collaboration
+                with SuperGroup.
+              </p>
+            </div>
+            <img className="landing__logo" src={logo} alt="" />
+          </div>
+          <Link to="/#landing__form">
+            <button className="landing__btn">Sign Up</button>
+          </Link>
+        </div>
       </section>
       <form
         id="landing__form"
@@ -153,6 +214,36 @@ const LandingPage = () => {
         </button>
         {/* https://react.dev/reference/react-dom/components/input#reading-the-input-values-when-submitting-a-form */}
       </form>
+      <footer className="landing__footer">
+        <div className="landing__footer-container">
+          <h4 className="landing__footer-subheading">Company</h4>
+          <ul className="landing__items">
+            <li className="landing__item">About Us</li>
+            <li className="landing__item">Why Choose us</li>
+            <li className="landing__item">Pricing</li>
+            <li className="landing__item">Testimonial</li>
+          </ul>
+        </div>
+        <div className="landing__footer-container">
+          <h4 className="landing__footer-subheading">Resources</h4>
+          <ul className="landing__items">
+            <li className="landing__item">Privacy Policy</li>
+            <li className="landing__item">Terms and Conditions</li>
+            <li className="landing__item">Blog</li>
+            <li className="landing__item">Contact Us</li>
+          </ul>
+        </div>
+        <div className="landing__footer-container">
+          <h4 className="landing__footer-subheading">Product</h4>
+          <ul className="landing__items">
+            <li className="landing__item">AI Generator</li>
+            <li className="landing__item">Creating a Groupchat</li>
+            <li className="landing__item">Time Schedule</li>
+            <li className="landing__item">Lead Generate</li>
+            <li className="landing__item">Remote Collaboration</li>
+          </ul>
+        </div>
+      </footer>
     </main>
   );
 };
