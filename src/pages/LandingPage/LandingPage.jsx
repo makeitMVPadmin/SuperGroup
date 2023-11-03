@@ -10,6 +10,9 @@ import {
 import headerLogo from "../../assets/logos/logo8.svg";
 import logo from "../../assets/logos/logo13.svg";
 import hero from "../../assets/images/hero.png";
+import girl from "../../assets/images/girl.png";
+import phone from "../../assets/images/phone.png";
+import networks from "../../assets/images/networks.png";
 
 const LandingPage = () => {
   const [name, setName] = useState("");
@@ -141,10 +144,18 @@ const LandingPage = () => {
                 Join the waitlist by entering your email.
               </p>
             </div>
-            <img className="landing__logo" src={logo} alt="" />
+            <img
+              className="landing__img"
+              src={girl}
+              alt="Girl sends a message from her laptop"
+            />
           </div>
           <div className="landing__step landing__step--second">
-            <img className="landing__logo" src={logo} alt="" />
+            <img
+              className="landing__img"
+              src={phone}
+              alt="Hand with phone and social media icons"
+            />
             <div className="landing__body">
               <h2 className="landing__subtitle">Step 2:</h2>
               <p className="landing__description">
@@ -160,7 +171,11 @@ const LandingPage = () => {
                 with SuperGroup.
               </p>
             </div>
-            <img className="landing__logo" src={logo} alt="" />
+            <img
+              className="landing__img"
+              src={networks}
+              alt="AI and artificial neural networks"
+            />
           </div>
           <Link to="/#landing__form">
             <button className="landing__btn">Sign Up</button>

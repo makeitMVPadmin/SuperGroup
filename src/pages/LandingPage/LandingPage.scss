@@ -101,6 +101,9 @@
       border: 8px solid $secondary-red;
     }
   }
+  &__img {
+    border: none;
+  }
   &__form {
     display: flex;
     flex-direction: column;
