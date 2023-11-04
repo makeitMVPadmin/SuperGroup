@@ -1,0 +1,22 @@
+@use "../../styles/partials/variables" as *;
+.chat{
+    flex: 2;
+}
+
+.chat__info{
+    height: 3.125rem;
+    background-color: $secondary-cream;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-users{
+        display: flex;
+    }
+}
+
+.placeholder{
+    background-color: purple;
+    height: 1rem;
+    width: 1rem;
+    margin: 1rem;
+}
