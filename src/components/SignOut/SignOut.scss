@@ -2,3 +2,18 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/global" as *;
+
+.logout__button {
+  width: 11.75rem;
+  height: 3.125rem;
+  flex-shrink: 0;
+  color: $primary-white;
+  text-align: center;
+  font-size: 1.6875rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  border: none;
+  border-radius: 0.625rem;
+  background: #09f;
+}
