@@ -46,10 +46,7 @@ const ClerkWithRoutes = () => {
     </ClerkProvider>
   )
 
-
 }
-
-
 
 root.render(
   <React.StrictMode>
