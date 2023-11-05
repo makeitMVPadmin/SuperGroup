@@ -13,8 +13,6 @@ import hero from "../../assets/images/hero.png";
 import girl from "../../assets/images/girl.png";
 import phone from "../../assets/images/phone.png";
 import networks from "../../assets/images/networks.png";
-import SignIn from "../../components/SignIn/SignIn";
-import SignOut from "../../components/SignOut/SignOut";
 
 const LandingPage = () => {
   const [name, setName] = useState("");
@@ -104,9 +102,8 @@ const LandingPage = () => {
           Join the Future of Collaboration! Be the first to experience
           SuperGroup, where AI meets seamless collaboration.
         </h2>
+        <a href="/sign-in">SignIn</a>
 
-        <SignIn />
-        <SignOut />
         <Link to="/#landing__form">
           <button className="landing__btn">Sign Up</button>
         </Link>

@@ -1,8 +1,9 @@
 import "./SignIn.scss";
 import { useAuth } from "@clerk/clerk-react";
 import { useEffect } from "react";
-import { auth } from "../../firebase-config";
-import { signInWithCustomToken } from "firebase/auth";
+import { getAuth, signInWithCustomToken } from "firebase/auth";
+
+const auth = getAuth();
 
 const Authentication = () => {
   const { getToken } = useAuth();
