@@ -7,12 +7,7 @@ import HomePage from './pages/HomePage/HomePage';
 import LandingPage from './pages/LandingPage/LandingPage';
 
 
-// if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
-//   throw new Error("Missing Publishable Key");
-// }
-
-// const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
-const clerkPubKey = "pk_test_YWJsZS10cm9sbC02Ni5jbGVyay5hY2NvdW50cy5kZXYk";
+const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
