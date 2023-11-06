@@ -18,16 +18,17 @@
     flex-shrink: 0;
   }
   &__header-btn {
-    width: 11.25rem;
-    height: 3.875rem;
+    font-family: "Corben", serif;
     @include font-h1-button;
+    border: 5px solid $primary-yellow;
     background-color: $primary-white;
-    border: 6px solid $primary-yellow;
+    padding: 0.5rem 1rem;
   }
   &__hero {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 5rem;
   }
   &__hero-container {
     display: flex;
@@ -48,16 +49,28 @@
     @include font-h2-subheader;
     margin-block-start: 0;
     margin-block-end: 0;
+    padding-bottom: 0.125rem;
+    &--features {
+      padding-bottom: 2.5rem;
+    }
+    &--process {
+      padding-bottom: 1.5rem;
+    }
+    &--waitlist {
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      padding-bottom: 1.75rem;
+    }
   }
   &__btn {
     border: 3px solid $primary-black;
-    margin: 1.75rem;
+    margin-bottom: 5rem;
     width: 27.5rem;
     padding: 1rem;
     background-color: $primary-white;
     @include font-h1-button;
   }
   &__features {
+    padding: 5rem 10rem;
     text-align: center;
     background-color: $secondary-cream;
   }
@@ -65,75 +78,123 @@
     display: flex;
     gap: 2rem;
   }
+
   &__feature {
     border-radius: 3.75rem;
     background: rgba(255, 210, 47, 0.4);
     padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__img {
+    //   width: 10%;
   }
 
   &__description {
-    font-family: "Corben", serif;
+    // font-family: "Corben", serif;
     margin-block-start: 0;
     margin-block-end: 0;
-    // font-family: "Poppins", sans-serif;
+    padding-bottom: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    @include font-h1-body;
   }
   &__process {
+    text-align: center;
   }
   &__process-container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
   }
   &__step {
     display: flex;
+    width: 60.8125rem;
+    height: 23.5625rem;
     margin-bottom: 7.63rem;
+    justify-content: center;
+    align-items: center;
+
     &--first {
       background-color: rgba(9, 84, 176, 0.06);
       border: 8px solid $secondary-dark-blue;
+      margin-left: 5rem;
+      background-image: url("../../assets/images/girl.png");
+      background-position: 90% center;
+      background-repeat: no-repeat;
+      background-size: auto;
+      justify-content: flex-start;
     }
     &--second {
       background-color: rgba(255, 210, 47, 0.15);
       border: 8px solid $primary-yellow;
+      margin-left: 13rem;
+      background-image: url("../../assets/images/phone.png");
+      background-repeat: no-repeat;
+      background-position: 10% center;
+      background-size: auto;
+      justify-content: flex-end;
     }
     &--third {
       background-color: rgba(255, 112, 112, 0.12);
       border: 8px solid $secondary-red;
+      margin-left: 5rem;
+      background-image: url("../../assets/images/networks.png");
+      background-repeat: no-repeat;
+      background-position: 90% center;
+      background-size: contain;
+      justify-content: flex-start;
     }
   }
-  &__img {
-    border: none;
+  &__body {
+    width: 33%;
+    padding: 3rem;
+  }
+
+  &__arrow-right {
+    position: absolute;
+    bottom: 500px;
+    left: 100px;
+  }
+  &__arrow-left {
+    position: absolute;
+    bottom: 10px;
+    right: 100px;
+  }
+  &__waitlist {
+    background-color: $secondary-cream;
+    text-align: center;
+    padding: 8rem 0 10rem 0;
+    position: relative;
+  }
+  &__cloud {
+    position: absolute;
+    top: 10px;
+    left: 65px;
   }
   &__form {
     display: flex;
     flex-direction: column;
-  }
-  &__label {
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2rem;
   }
   &__input {
+    padding: 1rem 4rem 1rem 1rem;
+    margin-bottom: 1.5rem;
+    @include font-h1-body;
+    color: #a7a7a7;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    border: none;
+    background-color: #f0f0f0;
   }
   &__btn-submit {
-  }
-  &__footer {
-    background-color: $secondary-cream;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    gap: 2rem;
-  }
-  &__footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  &__footer-subheading {
     font-family: "Corben", serif;
-  }
-  &__items {
-    text-align: left;
-  }
-  &__item {
-    font-family: "Gilroy";
-    list-style-type: none;
+    @include font-h1-button;
+    border: 5px solid $primary-yellow;
+    background-color: $primary-white;
+    padding: 0.5rem 1.5rem;
+    margin: 1rem 0 2rem 0;
   }
 }
