@@ -1,0 +1,29 @@
+.test {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid black;
+  }
+  &__improve-input {
+    height: 2vh;
+  }
+  &__ai-image {
+    border-radius: 50%;
+    max-height: 4.75vh;
+    height: 4.75vh;
+    max-width: 4.75vh;
+    width: 4.75vh;
+    object-fit: cover;
+    margin: 1.5rem 1rem 1rem 0rem;
+  }
+  &__image {
+    border-radius: 50%;
+    max-height: 4.75vh;
+    height: 4.75vh;
+    max-width: 4.75vh;
+    width: 4.75vh;
+    object-fit: cover;
+    margin: 1.5rem 1rem 1rem 0rem;
+  }
+}

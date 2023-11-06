@@ -13,6 +13,12 @@ import hero from "../../assets/images/hero.png";
 import girl from "../../assets/images/girl.png";
 import phone from "../../assets/images/phone.png";
 import networks from "../../assets/images/networks.png";
+import arrowRight from "../../assets/images/arrow_rightdown.svg";
+import arrowLeft from "../../assets/images/arrow_leftdown.svg";
+import cloud from "../../assets/images/cloud.svg";
+import people from "../../assets/images/ConnectedPeople.svg";
+import approved from "../../assets/images/ApprovedDelivery.svg";
+import shield from "../../assets/images/SecurityShield.svg";
 import SignOut from "../../components/SignOut/SignOut";
 
 const LandingPage = () => {
@@ -110,10 +116,22 @@ const LandingPage = () => {
           <button className="landing__btn">Sign Up</button>
         </Link>
       </section>
+      <img
+        className="landing__arrow-right"
+        src={arrowRight}
+        alt="Curver arrow going right and down with yellow border"
+      />
       <section className="landing__features">
-        <h2 className="landing__subtitle">Our Key Features:</h2>
+        <h2 className="landing__subtitle landing__subtitle--features">
+          Our Key Features:
+        </h2>
         <div className="landing__features-container">
           <article className="landing__feature">
+            <img
+              className="landing__img"
+              src={people}
+              alt="Hand with phone and social media icons"
+            />
             <h2 className="landing__subtitle">AI-Enhanced Collaboration</h2>
             <p className="landing__description">
               Leverage the power of AI to enhance your team's communication and
@@ -121,6 +139,11 @@ const LandingPage = () => {
             </p>
           </article>
           <article className="landing__feature">
+            <img
+              className="landing__img"
+              src={approved}
+              alt="Hand with phone and social media icons"
+            />
             <h2 className="landing__subtitle">Intuitive Interface</h2>
             <p className="landing__description">
               Enjoy a user-friendly and intuitive chat interface with seamless
@@ -128,6 +151,11 @@ const LandingPage = () => {
             </p>
           </article>
           <article className="landing__feature">
+            <img
+              className="landing__img"
+              src={shield}
+              alt="Hand with phone and social media icons"
+            />
             <h2 className="landing__subtitle">Secure and Private</h2>
             <p className="landing__description">
               Your data is encrypted and protected to ensure the highest
@@ -136,132 +164,113 @@ const LandingPage = () => {
           </article>
         </div>
       </section>
+      <img
+        className="landing__arrow-left"
+        src={arrowLeft}
+        alt="Curver arrow going left and down with yellow border"
+      />
       <section className="landing__process">
         <div className="landing__process-container">
-          <img className="landing__logo" src={logo} alt="" />
-          <h4 className="landing__subtitle">How it Works:</h4>
-          <div className="landing__step landing__step--first">
-            <div className="landing__body">
-              <h2 className="landing__subtitle">Step 1:</h2>
-              <p className="landing__description">
-                Join the waitlist by entering your email.
-              </p>
-            </div>
-            <img
-              className="landing__img"
-              src={girl}
-              alt="Girl sends a message from her laptop"
-            />
-          </div>
-          <div className="landing__step landing__step--second">
-            <img
-              className="landing__img"
-              src={phone}
-              alt="Hand with phone and social media icons"
-            />
-            <div className="landing__body">
-              <h2 className="landing__subtitle">Step 2:</h2>
-              <p className="landing__description">
-                Receive exclusive updates and early access notifications.
-              </p>
-            </div>
-          </div>
-          <div className="landing__step landing__step--third">
-            <div className="landing__body">
-              <h2 className="landing__subtitle">Step 3:</h2>
-              <p className="landing__description">
-                Be among the first to experience the future of collaboration
-                with SuperGroup.
-              </p>
-            </div>
-            <img
-              className="landing__img"
-              src={networks}
-              alt="AI and artificial neural networks"
-            />
-          </div>
-          <Link to="/#landing__form">
-            <button className="landing__btn">Sign Up</button>
-          </Link>
+          <img
+            className="landing__logo"
+            src={logo}
+            alt="MakeItMVP LightBulb logo"
+          />
+          <h2 className="landing__subtitle landing__subtitle--process">
+            How it Works:
+          </h2>
         </div>
+        <div className="landing__step landing__step--first">
+          <div className="landing__body">
+            <h2 className="landing__subtitle">Step 1:</h2>
+            <p className="landing__description">
+              Join the waitlist by entering your email.
+            </p>
+          </div>
+          {/* <img
+            className="landing__img"
+            src={girl}
+            alt="Girl sends a message from her laptop"
+          /> */}
+        </div>
+        <div className="landing__step landing__step--second">
+          {/* <img
+            className="landing__img"
+            src={phone}
+            alt="Hand with phone and social media icons"
+          /> */}
+          <div className="landing__body">
+            <h2 className="landing__subtitle">Step 2:</h2>
+            <p className="landing__description">
+              Receive exclusive updates and early access notifications.
+            </p>
+          </div>
+        </div>
+        <div className="landing__step landing__step--third">
+          <div className="landing__body">
+            <h2 className="landing__subtitle">Step 3:</h2>
+            <p className="landing__description">
+              Be among the first to experience the future of collaboration with
+              SuperGroup.
+            </p>
+          </div>
+          {/* <img
+            className="landing__img"
+            src={networks}
+            alt="AI and artificial neural networks"
+          /> */}
+        </div>
+        <Link to="/#landing__form">
+          <button className="landing__btn">Sign Up</button>
+        </Link>
       </section>
-      <form
-        id="landing__form"
-        className="landing__form"
-        onSubmit={handleSubmit}
-      >
-        <label htmlFor="name" className="landing__label">
-          Name:
-        </label>
-        <input
-          className="landing__input"
-          name="name"
-          type="text"
-          placeholder="Full Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        ></input>
 
-        <label htmlFor="email" className="field__label">
-          Email:
-        </label>
-        <input
-          id="email"
-          className="landing__input"
-          name="email"
-          type="text"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        ></input>
-
-        <label htmlFor="linkedIn" className="field__label">
-          LinkedIn <span>(optional)</span>:
-        </label>
-        <input
-          id="linkedIn"
-          className="landing__input"
-          name="linkedIn"
-          type="text"
-          placeholder="https://linkedin.com/in/"
-          value={linkedIn}
-          onChange={(e) => setLinkedIn(e.target.value)}
-        ></input>
-        <button className="landing__btn-submit" type="submit">
-          Submit
-        </button>
-        {/* https://react.dev/reference/react-dom/components/input#reading-the-input-values-when-submitting-a-form */}
-      </form>
-      <footer className="landing__footer">
-        <div className="landing__footer-container">
-          <h4 className="landing__footer-subheading">Company</h4>
-          <ul className="landing__items">
-            <li className="landing__item">About Us</li>
-            <li className="landing__item">Why Choose us</li>
-            <li className="landing__item">Pricing</li>
-            <li className="landing__item">Testimonial</li>
-          </ul>
-        </div>
-        <div className="landing__footer-container">
-          <h4 className="landing__footer-subheading">Resources</h4>
-          <ul className="landing__items">
-            <li className="landing__item">Privacy Policy</li>
-            <li className="landing__item">Terms and Conditions</li>
-            <li className="landing__item">Blog</li>
-            <li className="landing__item">Contact Us</li>
-          </ul>
-        </div>
-        <div className="landing__footer-container">
-          <h4 className="landing__footer-subheading">Product</h4>
-          <ul className="landing__items">
-            <li className="landing__item">AI Generator</li>
-            <li className="landing__item">Creating a Groupchat</li>
-            <li className="landing__item">Time Schedule</li>
-            <li className="landing__item">Lead Generate</li>
-            <li className="landing__item">Remote Collaboration</li>
-          </ul>
-        </div>
-      </footer>
+      <section className="landing__waitlist">
+        <img
+          className="landing__cloud"
+          src={cloud}
+          alt="Bubble cloud with yellow border"
+        />
+        <h2 className="landing__subtitle landing__subtitle--waitlist">
+          Unlock Your Power
+        </h2>
+        <p className="landing__description">Join Our Email List</p>
+        <form
+          id="landing__form"
+          className="landing__form"
+          onSubmit={handleSubmit}
+        >
+          <input
+            className="landing__input"
+            name="name"
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          ></input>
+          <input
+            id="email"
+            className="landing__input"
+            name="email"
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          ></input>
+          <input
+            id="linkedIn"
+            className="landing__input"
+            name="linkedIn"
+            type="text"
+            placeholder="LinkedIn (Optional)"
+            value={linkedIn}
+            onChange={(e) => setLinkedIn(e.target.value)}
+          ></input>
+          <button className="landing__btn-submit" type="submit">
+            Submit
+          </button>
+        </form>
+      </section>
     </main>
   );
 };
