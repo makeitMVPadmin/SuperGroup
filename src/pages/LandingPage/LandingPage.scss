@@ -4,17 +4,16 @@
 @use "../../styles/partials/global" as *;
 
 .landing {
-  font-family: "Gilroy";
   background-color: $primary-white;
   &__header {
-    padding: 0.81rem 8rem 0.81rem 6rem;
+    padding: 1.5rem 6.25rem 1.5rem 5.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   &__header-logo {
-    width: 16rem;
-    height: 4.9375rem;
+    width: 13.5rem;
+    height: 4.125rem;
     flex-shrink: 0;
   }
   &__header-btn {
@@ -22,20 +21,23 @@
     @include font-h1-button;
     border: 5px solid $primary-yellow;
     background-color: $primary-white;
-    padding: 0.5rem 1rem;
+    padding: 0 1rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   }
   &__hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 5rem;
+    padding: 1.5rem 4rem 0 5.25rem;
   }
   &__hero-container {
     display: flex;
     align-items: center;
+    gap: 2rem;
   }
+
   &__hero-img {
-    width: 20rem;
+    width: 39%;
   }
 
   &__title {
@@ -50,6 +52,10 @@
     margin-block-start: 0;
     margin-block-end: 0;
     padding-bottom: 0.125rem;
+    &--hero {
+      text-align: left;
+      margin-right: 5rem;
+    }
     &--features {
       padding-bottom: 2.5rem;
     }
@@ -64,10 +70,13 @@
   &__btn {
     border: 3px solid $primary-black;
     margin-bottom: 5rem;
+    margin-top: 1.5rem;
     width: 27.5rem;
     padding: 1rem;
     background-color: $primary-white;
+    font-family: "Poppins", sans-serif;
     @include font-h1-button;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   }
   &__features {
     padding: 5rem 10rem;
@@ -89,7 +98,8 @@
     justify-content: center;
   }
   &__img {
-    //   width: 10%;
+    border: none;
+    margin-top: -1px;
   }
 
   &__description {

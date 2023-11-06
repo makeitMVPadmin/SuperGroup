@@ -1,6 +1,5 @@
 import "./LandingPage.scss";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { db } from "../../firebase-config";
 import {
   collection, //function that allows to make a reference to a collection in firebase
@@ -9,7 +8,7 @@ import {
 } from "firebase/firestore";
 import headerLogo from "../../assets/logos/logo8.svg";
 import logo from "../../assets/logos/logo13.svg";
-import hero from "../../assets/images/hero.png";
+import hero from "../../assets/images/hero.svg";
 import girl from "../../assets/images/girl.png";
 import phone from "../../assets/images/phone.png";
 import networks from "../../assets/images/networks.png";
@@ -19,6 +18,7 @@ import cloud from "../../assets/images/cloud.svg";
 import people from "../../assets/images/ConnectedPeople.svg";
 import approved from "../../assets/images/ApprovedDelivery.svg";
 import shield from "../../assets/images/SecurityShield.svg";
+import bubble from "../../assets/images/bubble.svg";
 
 const LandingPage = () => {
   const [name, setName] = useState("");
@@ -89,9 +89,9 @@ const LandingPage = () => {
           src={headerLogo}
           alt="MakeitMVP header logo"
         />
-        <Link to="/#landing__form">
+        <a href="/#landing__form">
           <button className="landing__header-btn">Sign Up</button>
-        </Link>
+        </a>
       </header>
       <section className="landing__hero">
         <div className="landing__hero-container">
@@ -104,14 +104,14 @@ const LandingPage = () => {
             alt="three people strategizing"
           />
         </div>
-        <h2 className="landing__subtitle">
+        <h2 className="landing__subtitle landing__subtitle--hero">
           Join the Future of Collaboration! Be the first to experience
           SuperGroup, where AI meets seamless collaboration.
         </h2>
 
-        <Link to="/#landing__form">
+        <a href="/#landing__form">
           <button className="landing__btn">Sign Up</button>
-        </Link>
+        </a>
       </section>
       <img
         className="landing__arrow-right"
@@ -217,9 +217,9 @@ const LandingPage = () => {
             alt="AI and artificial neural networks"
           /> */}
         </div>
-        <Link to="/#landing__form">
+        <a href="/#landing__form">
           <button className="landing__btn">Sign Up</button>
-        </Link>
+        </a>
       </section>
 
       <section className="landing__waitlist">
