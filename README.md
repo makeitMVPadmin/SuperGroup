@@ -76,6 +76,7 @@ This starter repository uses the following technologies:
 
 - React: A JavaScript library for building user interfaces.
 - Sass: A CSS extension language that adds features like variables, nesting, and more.
+- Clerk: A third-party software that authenticates users, manages session tokens, and provides user management functionality to the project.
 
 You can expand upon these technologies as needed for your project.
 
