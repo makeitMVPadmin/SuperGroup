@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import { ClerkProvider, SignIn, SignUp, SignedIn, SignedOut, RedirectToSignIn } from '@clerk/clerk-react';
 import HomePage from './pages/HomePage/HomePage';
 import LandingPage from './pages/LandingPage/LandingPage';
+import ChatPage from "./pages/ChatPage/ChatPage"
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
             </>
             }
           />
+      <Route path="/chat" element={<ChatPage/>}/>
         </Routes>
       </ClerkProvider>
     )
