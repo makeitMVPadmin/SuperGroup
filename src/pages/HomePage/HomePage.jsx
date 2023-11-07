@@ -1,7 +1,7 @@
-// import SignOut from "../../components/SignOut/SignOut"
-// import SignIn from "../../components/SignIn/SignIn"
+import SignOut from "../../components/SignOut/SignOut";
+import SignIn from "../../components/SignIn/SignIn";
 import "./HomePage.scss";
-// import { useUser } from "@clerk/clerk-react";import SignIn from "../../components/"../../
+// import { useUser } from "@clerk/clerk-react";
 const HomePage = () => {
   // const { user } = useUser();
   // console.log(user.username);
@@ -10,10 +10,9 @@ const HomePage = () => {
 
   return (
     <div className="home">
-      <SignIn />
       <h1 className="home__title"> Welcome !</h1>
-      {/* <SignIn />
-      <SignOut /> */}
+      <SignIn />
+      <SignOut />
     </div>
   );
 };
