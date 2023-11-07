@@ -15,16 +15,18 @@
         flex-direction: column;
         margin: 0.7rem;
         &-text{
-            background-color: silver;
+            // background-color: silver;
             padding: 0.625rem 1.25rem;
             border-radius: 0 0.625rem 0.625rem 0.625rem;
+            border: 2px black solid;
+            box-shadow: inset 0px 2px 0px 0px rgba(0,0,0,1);
         }
     }
     &.owner{
         flex-direction: row-reverse;
         p{
-            background-color: silver;
-            color: blue;
+            // background-color: silver;
+            // color: blue;
             border-radius: 0.625rem 0 0.625rem 0.625rem ;
         }
     }
