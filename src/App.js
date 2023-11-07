@@ -31,16 +31,30 @@ function App() {
             path="/home"
             element={
             <>
-              <SignedIn>
+            <HomePage />
+              {/* <SignedIn>
                 <HomePage />
               </SignedIn>
                <SignedOut>
                 <RedirectToSignIn />
-             </SignedOut>
+             </SignedOut> */}
             </>
             }
           />
-      <Route path="/chat" element={<ChatPage/>}/>
+          <Route
+            path="/chat"
+            element={
+            <>
+            <ChatPage />
+              {/* <SignedIn>
+                <ChatPage />
+              </SignedIn>
+               <SignedOut>
+                <RedirectToSignIn />
+             </SignedOut> */}
+            </>
+            }
+          />
         </Routes>
       </ClerkProvider>
     )
