@@ -77,6 +77,7 @@ const LandingPage = () => {
 
   return (
     <main className="landing">
+      <a href="/sign-in">Sign In</a>
       <header className="landing__header">
         <img
           className="landing__header-logo"
