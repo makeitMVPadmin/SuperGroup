@@ -102,7 +102,6 @@ const LandingPage = () => {
           Join the Future of Collaboration! Be the first to experience
           SuperGroup, where AI meets seamless collaboration.
         </h2>
-        <a href="/sign-in">SignIn</a>
 
         <Link to="/#landing__form">
           <button className="landing__btn">Sign Up</button>

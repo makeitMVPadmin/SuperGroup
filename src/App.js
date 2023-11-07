@@ -7,7 +7,7 @@ import LandingPage from './pages/LandingPage/LandingPage';
 function App() {
 
   const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
-
+  
   const ClerkWithRoutes = () => {
     const navigate = useNavigate()
   
