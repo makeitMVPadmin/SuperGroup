@@ -11,6 +11,17 @@
     @content;
   }
 }
+@mixin desktop1 {
+  @media screen and (max-width: $desktop-breakpoint1) {
+    @content;
+  }
+}
+
+@mixin desktop2 {
+  @media screen and (min-width: $desktop-breakpoint2) {
+    @content;
+  }
+}
 
 //mobile text styles
 

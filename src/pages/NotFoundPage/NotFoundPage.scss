@@ -1,0 +1,41 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.not-found {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__round-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 6.75rem;
+    height: 6.75rem;
+    background-color: $secondary-red;
+  }
+
+  &__error {
+    font-family: "Corben", serif;
+    color: $primary-yellow;
+    @include font-h1-button;
+    font-size: 2rem;
+    letter-spacing: 0.18px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+  &__message {
+    margin: 2rem;
+    color: $primary-light-blue;
+    @include font-h1-body;
+    font-size: 1.5rem;
+    letter-spacing: 0.18px;
+    text-align: center;
+    font-family: "Corben", serif;
+    background-color: $secondary-cream;
+  }
+}

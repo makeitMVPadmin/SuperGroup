@@ -4,6 +4,7 @@ import { ClerkProvider, SignIn, SignUp, SignedIn, SignedOut, RedirectToSignIn } 
 import HomePage from './pages/HomePage/HomePage';
 import LandingPage from './pages/LandingPage/LandingPage';
 import ChatPage from "./pages/ChatPage/ChatPage"
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
 
