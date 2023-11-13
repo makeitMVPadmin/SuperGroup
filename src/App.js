@@ -8,7 +8,8 @@ import ChatPage from "./pages/ChatPage/ChatPage"
 function App() {
 
   const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
-  
+  // console.log(clerkPubKey)
+
   const ClerkWithRoutes = () => {
     const navigate = useNavigate()
   
@@ -31,13 +32,13 @@ function App() {
             path="/home"
             element={
             <>
-            <HomePage />
-              {/* <SignedIn>
+            {/* <HomePage /> */}
+              <SignedIn>
                 <HomePage />
               </SignedIn>
                <SignedOut>
                 <RedirectToSignIn />
-             </SignedOut> */}
+             </SignedOut>
             </>
             }
           />
@@ -45,13 +46,13 @@ function App() {
             path="/chat"
             element={
             <>
-            <ChatPage />
-              {/* <SignedIn>
+            {/* <ChatPage /> */}
+              <SignedIn>
                 <ChatPage />
               </SignedIn>
                <SignedOut>
                 <RedirectToSignIn />
-             </SignedOut> */}
+             </SignedOut>
             </>
             }
           />
