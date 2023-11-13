@@ -1,13 +1,14 @@
 import "./Test.scss";
 import React, { useState, useRef } from "react";
-import { db } from "../../firebase-config";
+import { db, auth } from "../../firebase-config";
 import logo from "../../assets/logos/logo1.svg";
 import logo2 from "../../assets/logos/logo2.svg";
-import up from "../../assets/icons/thumbsup.svg";
-import down from "../../assets/icons/thumbsdown.svg";
+import up from "../../assets/icons/up.svg";
+import down from "../../assets/icons/down.svg";
 import profile from "../../assets/images/Mohan-muruge.jpg";
 import { Auth } from "../Auth/Auth";
 import { TestChat } from "../TestChat/TestChat";
+import { signOut } from "firebase/auth";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
@@ -25,6 +26,13 @@ const Test = () => {
       </div>
     );
   }
+
+  const signUserOut = async () => {
+    await signOut(auth);
+    cookies.remove("auth-token");
+    setIsAuth(false);
+    setRoom(null);
+  };
 
   // const openai = require("openai");
   //   gpt-3.5-turbo
@@ -47,7 +55,12 @@ const Test = () => {
           </div>
         )}
       </div>
-      <div className="test__header">
+      <div className="sign-out">
+        <button className="sign-out-btn" onClick={signUserOut}>
+          Sign Out
+        </button>
+      </div>
+      {/* <div className="test__header">
         <img className="test__logo" src={logo} alt="logo" />
         <h1>Corporate Group Chat</h1>
         <img className="test__logo" src={logo} alt="logo" />
@@ -75,35 +88,31 @@ const Test = () => {
             />
           </label>
         </div>
-        <div>
-          <span className="test__span">Was this helpful?</span>
-          <img className="test__img1" src={up} alt="Thumbs up" />
-          <img className="test__img2" src={down} alt="Thumbs down" />
+        */}
+      <div className="test__ai">
+        <div className="test__ai-container">
+          <div className="test__ai-message">
+            <p className="test__message">
+              Of course, here are the stats from last quarter: There was a 5%
+              increase in sales generated from ad revenue and a 1.5% decrease in
+              webpage abandonment.
+            </p>
+            <div className="test__feedback">
+              <span className="test__span">Was this helpful?</span>
+              <div className="test__feedback-icons">
+                <img className="test__img1" src={up} alt="Thumbs up" />
+                <img className="test__img2" src={down} alt="Thumbs down" />
+              </div>
+            </div>
+          </div>
+          <div className="test__ai-img"></div>
         </div>
         <div className="test__improve-container">
-          <label for="test__improve-input" className="test__improve-label">
-            <input
-              id="test__improve-input"
-              className="test__improve-input"
-              name="improve"
-              type="text"
-              placeholder="Describe how I can improve"
-              required
-            />
-          </label>
-          <label for="test__ai-image">
-            <input
-              id="test__ai-image"
-              className="test__ai-image"
-              type="image"
-              name="image"
-              src={profile}
-              alt="Mohan-muruge"
-            />
-          </label>
-          <button className="test__button">Send</button>
+          <p className="test__message">Please describe how I can improve</p>
+          <div className="test__ai-img"></div>
         </div>
       </div>
+      {/* </div> */}
     </main>
   );
 };
