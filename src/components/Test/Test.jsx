@@ -1,25 +1,59 @@
 import "./Test.scss";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { db } from "../../firebase-config";
 import logo from "../../assets/logos/logo1.svg";
 import logo2 from "../../assets/logos/logo2.svg";
 import up from "../../assets/icons/thumbsup.svg";
 import down from "../../assets/icons/thumbsdown.svg";
 import profile from "../../assets/images/Mohan-muruge.jpg";
+import { Auth } from "../Auth/Auth";
+import { TestChat } from "../TestChat/TestChat";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 const Test = () => {
-  const openai = require("openai");
+  const [isAuth, setIsAuth] = useState(cookies.get("auth-token")); //variable to check if user authenticated or not, they might have been authenticated before so we need to grab information in the cookies
+  //first we want to ask them the room they want to join
+  const [room, setRoom] = useState(null); //it will represent what room the  user typed in, is room empty or not
+  const roomInputRef = useRef(null); // use useRef because if we use onchange in the input, as soon as we add a single letter room will become true and we'll go into a chat, now we'll only update the room state when we click enter chat
+  // if there is an auth token anywhere in the app it would be true, if not it will be false
+  //if user is not auth send back to auth
+  if (!isAuth) {
+    return (
+      <div>
+        <Auth setIsAuth={setIsAuth} />
+      </div>
+    );
+  }
+
+  // const openai = require("openai");
   //   gpt-3.5-turbo
-  const [newMessage, setNewMessage] = useState("");
+
   return (
     <main>
-      <div className="test__container">
-        <img className="test__container" src={logo} alt="logo" />
-        <h1>Corporate Group Chat</h1>
-        <img src={logo2} alt="logo" />
-      </div>
+      {/* is room null or not, if it isn't null, display the chat,if it is null we want the user to type in a room ID */}
       <div>
-        <div>
+        {room ? (
+          <div>
+            <TestChat room={room} />
+          </div>
+        ) : (
+          <div className="room">
+            <label>Enter Room Name</label>
+            <input ref={roomInputRef} />
+            <button onClick={() => setRoom(roomInputRef.current.value)}>
+              Enter Chat
+            </button>
+          </div>
+        )}
+      </div>
+      <div className="test__header">
+        <img className="test__logo" src={logo} alt="logo" />
+        <h1>Corporate Group Chat</h1>
+        <img className="test__logo" src={logo} alt="logo" />
+      </div>
+      <div className="test__container">
+        <div className="test__row">
           <label for="test__image">
             <input
               id="test__image"
