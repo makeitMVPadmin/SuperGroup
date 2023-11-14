@@ -13,6 +13,7 @@ import hero from "../../assets/images/hero.png";
 import girl from "../../assets/images/girl.png";
 import phone from "../../assets/images/phone.png";
 import networks from "../../assets/images/networks.png";
+// import SignOut from "../../components/SignOut/SignOut";
 
 const LandingPage = () => {
   const [name, setName] = useState("");
@@ -77,6 +78,8 @@ const LandingPage = () => {
 
   return (
     <main className="landing">
+      {/* <a href="/sign-in">Sign In</a>
+      <SignOut /> */}
       <header className="landing__header">
         <img
           className="landing__header-logo"

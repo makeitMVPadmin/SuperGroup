@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage/HomePage';
 import LandingPage from './pages/LandingPage/LandingPage';
 import ChatPage from "./pages/ChatPage/ChatPage"
 
+
 function App() {
 
   const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
@@ -14,6 +15,7 @@ function App() {
   
     return (
       <ClerkProvider 
+            
       publishableKey={clerkPubKey}
       navigate={(to) => navigate(to)}
       >
