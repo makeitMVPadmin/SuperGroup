@@ -1,20 +1,9 @@
-import SignOut from "../../components/SignOut/SignOut";
-import SignIn from "../../components/SignIn/SignIn";
+// import SignOut from "../../components/SignOut/SignOut";
+// import SignIn from "../../components/SignIn/SignIn";
 import "./HomePage.scss";
-import {
-  CreateOrganization,
-  OrganizationProfile,
-  OrganizationSwitcher,
-  OrganizationList,
-  UserButton,
-} from "@clerk/clerk-react";
-// import { useUser } from "@clerk/clerk-react";
+// import { OrganizationSwitcher, UserButton } from "@clerk/clerk-react";
 
-// function setActive({
-//   session,
-//   organization,
-//   beforeEmit,
-// }: SetActiveParams): Promise<void>;
+// import { useUser } from "@clerk/clerk-react";
 
 const HomePage = () => {
   // const { user } = useUser();
@@ -25,13 +14,11 @@ const HomePage = () => {
   return (
     <div className="home">
       <h1 className="home__title"> Welcome !</h1>
-      <SignIn />
+      {/* <SignIn />
       <SignOut />
-      {/* <CreateOrganization />
-      <OrganizationProfile /> */}
+
       <OrganizationSwitcher />
-      {/* <OrganizationList /> */}
-      <UserButton />
+      <UserButton /> */}
     </div>
   );
 };
