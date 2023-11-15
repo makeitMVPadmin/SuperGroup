@@ -3,9 +3,8 @@ import { useAuth } from "@clerk/clerk-react";
 import { useEffect } from "react";
 import { getAuth, signInWithCustomToken } from "firebase/auth";
 import { useUser } from "@clerk/clerk-react";
-// import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-// import { setDoc, doc } from "firebase/firestore";
-// import { storage, db } from "../../firebase-config"
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../firebase-config"
 
 
 
@@ -30,23 +29,13 @@ const Authentication = () => {
         const userCredentials = await signInWithCustomToken(auth, token);
         console.log(userCredentials);
         console.log("Authenticated user:", userCredentials.user);
-        // const storageRef = ref(storage, fullName)
-        // const uploadTask = uploadBytesResumable(storageRef);
-        // uploadTask.on( 
-        //   (error) => {
-        //     console.log(error)
-        //   }, 
-        //   () => {
-        //     getDownloadURL(uploadTask.snapshot.ref).then(async(downloadURL) => {
-        //     await setDoc(doc( db,"users", user.uid),{
-        //       fullName,
-        //       email,
-        //       uid,
-        //       photoUrl
-        //     })
-        //   });
-        // }
-        // );
+        await addDoc(collection(db, "users"), {
+          displayName: fullName,
+          email: email,
+          photoUrl: photoUrl,
+          uid: uid
+      });
+        await addDoc(collection(db, "userChats"),{ });
       } catch (error) {
         console.error("Error signing in with Clerk token:", error);
       }

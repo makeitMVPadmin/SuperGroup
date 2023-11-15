@@ -8,7 +8,7 @@ import ChatPage from "./pages/ChatPage/ChatPage"
 function App() {
 
   const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
-  // console.log(clerkPubKey)
+  console.log(clerkPubKey);
 
   const ClerkWithRoutes = () => {
     const navigate = useNavigate()
