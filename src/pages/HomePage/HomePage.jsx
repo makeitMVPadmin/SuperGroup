@@ -4,7 +4,7 @@ import "./HomePage.scss";
 import { OrganizationSwitcher, UserButton } from "@clerk/clerk-react";
 import { useState,useEffect } from "react";
 import { db } from "../../firebase-config"
-import { addDoc ,getDocs, collection } from "firebase/firestore";
+import { doc, setDoc,getDoc, collection } from "firebase/firestore";
 
 import { useUser } from "@clerk/clerk-react";
 
@@ -23,7 +23,7 @@ const HomePage = () => {
   const fetchUserList = async () => {
     try {
       const userCollection = collection(db, 'users');
-      const querySnapshot = await getDocs(userCollection);
+      const querySnapshot = await getDoc(userCollection);
 
       const users = [];
       querySnapshot.forEach((doc) => {
@@ -63,8 +63,20 @@ const HomePage = () => {
       // Combine user IDs to create a unique group chat ID
       const groupChatId = selectedUsers.concat(uid).sort().join('-');
 
+      // Get a reference to the chat document
+      const chatRef = doc(db, 'chats', groupChatId);
+
+      // Check if the document already exists
+      const chatSnapshot = await getDoc(chatRef);
+
+      if (chatSnapshot.exists()) {
+        // Handle the case where the group chat already exists
+        console.error('Group chat with the same ID already exists.');
+        return;
+      }
+
       // Create a new chat room in Firebase
-      await addDoc(collection(db, 'chats').doc(groupChatId), {
+      await setDoc(chatRef, {
         groupName,
         members: selectedUsers,
       });
