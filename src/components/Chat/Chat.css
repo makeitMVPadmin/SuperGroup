@@ -1,0 +1,21 @@
+.chat {
+  flex: 2;
+}
+
+.chat__info {
+  height: 3.125rem;
+  background-color: #fff9f4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chat__info-users {
+  display: flex;
+}
+
+.placeholder {
+  background-color: purple;
+  height: 1rem;
+  width: 1rem;
+  margin: 1rem;
+}/*# sourceMappingURL=Chat.css.map */

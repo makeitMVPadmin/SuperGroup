@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "Corben", serif;
+  src: url("../../assets/fonts/Corben-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins", sans-serif;
+  src: url("../../assets/fonts/Poppins-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../../assets/fonts/Gilroy-ExtraBold.otf") format("otf");
+  font-weight: 700;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  padding: 5%;
+}
+
+.ReactModal__Content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  background: none;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.modal-content {
+  max-height: 141.9%;
+  overflow-y: auto;
+  width: 70%;
+  max-width: 70%;
+  margin: auto;
+  margin-bottom: 19rem;
+  border-radius: 10px;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}/*# sourceMappingURL=AccountButton.css.map */

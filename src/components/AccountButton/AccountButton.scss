@@ -1,0 +1,39 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  padding: 5%;
+}
+
+.ReactModal__Content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  background: none;
+}
+.modal {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+.modal-content {
+  max-height: 141.9%;
+  overflow-y: auto;
+  width: 70%;
+  max-width: 70%;
+  margin: auto;
+  margin-bottom: 19rem;
+  border-radius: 10px;
+}
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
