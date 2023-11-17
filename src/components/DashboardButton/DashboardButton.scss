@@ -1,0 +1,22 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.dashboard__button {
+  background-image: url("../../assets/icons/Home.svg");
+  background-repeat: no-repeat;
+  background-position: center left 0.15rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1.6rem;
+  background-color: transparent;
+  width: 10.1875rem;
+  flex: 1 0 0;
+  height: 2.125rem;
+  color: #525050;
+  text-align: center;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 800;
+  border: none;
+}

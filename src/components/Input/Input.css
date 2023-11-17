@@ -1,0 +1,17 @@
+.input {
+  height: 3.175rem;
+  background-color: #fff9f4;
+  padding: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.input__field {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 1rem;
+  background-color: #fff9f4;
+  font-size: 1.1rem;
+}/*# sourceMappingURL=Input.css.map */
