@@ -1,19 +1,22 @@
 import "./Message.scss"
+import { useUser } from "@clerk/clerk-react";
 
-const Message = () => {
+const Message = ({ message }) => {
+  const { user } = useUser();
+  const { text, senderId, timestamp } = message;
   return (
-    <div className="message owner">
+    <div className={`message ${senderId === user.uid && "owner"}`}>
         <div className="message__info">
             {/* profile picture */}
             <div className="placeholder"></div>
             {/* time stamp */}
-            <span>Just Now</span>
+            <span>{timestamp}</span>
         </div>
         <div className="message__content">
-            <p className="message__content-text">hello</p>
+            <p className="message__content-text">{text}</p>
         </div>
     </div>
   )
 }
 
-export default Message
+export default Message;
