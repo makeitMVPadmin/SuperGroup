@@ -7,7 +7,7 @@ import { useUser } from "@clerk/clerk-react"
 const ChatPage = () => {
   const { chatId } = useParams();
   const { user } = useUser();
-  const uid = user.uid
+  const uid = user.id
 
   // Now you can access chatId as a variable
   console.log(chatId);

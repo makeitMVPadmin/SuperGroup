@@ -1,22 +1,33 @@
-import "./Message.scss"
+import React, { useEffect, useRef } from "react";
+import "./Message.scss";
 import { useUser } from "@clerk/clerk-react";
 
-const Message = ({ message }) => {
-  const { user } = useUser();
-  const { text, senderId, timestamp } = message;
+const Message = ({ message, uid }) => {
+  const { text, senderId, createdAt } = message;
+  const user = useUser()
+  const isCurrentUser = senderId === uid;
+  console.log(uid)
+  
+  const ref = useRef();
+
+  useEffect(()=>{
+    ref.current?.scrollIntoView({behavior:"smooth"})
+  },[message])
+
   return (
-    <div className={`message ${senderId === user.uid && "owner"}`}>
-        <div className="message__info">
-            {/* profile picture */}
-            <div className="placeholder"></div>
-            {/* time stamp */}
-            <span>{timestamp}</span>
-        </div>
-        <div className="message__content">
-            <p className="message__content-text">{text}</p>
-        </div>
+    <div ref={ref} className={`message ${isCurrentUser ? "owner" : "other-user"}`}>
+      {console.log(isCurrentUser)}
+      <div className="message__info">
+        {/* Profile picture */}
+        <div className="placeholder"></div>
+        {/* Timestamp */}
+        <span>{createdAt}</span>
+      </div>
+      <div className="message__content">
+        <p className="message__content-text">{text}</p>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Message;

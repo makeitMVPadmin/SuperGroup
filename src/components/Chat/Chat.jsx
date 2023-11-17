@@ -1,19 +1,18 @@
-import { useEffect, useState } from "react"
-import Input from "../Input/Input"
-import Messages from "../Messages/Messages"
-import "./Chat.scss"
-import { getDoc, doc } from "firebase/firestore"
-import { db } from "../../firebase-config"
+import { useEffect, useState } from "react";
+import Input from "../Input/Input";
+import Messages from "../Messages/Messages";
+import "./Chat.scss";
+import { getDoc, doc } from "firebase/firestore";
+import { db } from "../../firebase-config";
 
-const Chat = ({chatId, uid}) => {
-
+const Chat = ({ chatId, uid }) => {
   const [chatData, setChatData] = useState(null);
 
   useEffect(() => {
     // Fetch chat data from Firestore based on chatId
     const fetchChatData = async () => {
       try {
-        const chatRef = doc(db, "chats", chatId);
+        const chatRef = doc(db, "chatRooms", chatId); // Updated collection reference to "chatRooms"
         const chatSnapshot = await getDoc(chatRef);
 
         if (chatSnapshot.exists()) {
@@ -31,11 +30,10 @@ const Chat = ({chatId, uid}) => {
     fetchChatData();
   }, [chatId]);
 
-
   return (
     <div className="chat">
       <div className="chat__info">
-        <span>{chatData ? chatData.groupName : "Loading..."}</span>
+        <span>{chatData ? chatData.chatRoomName : "Loading..."}</span>
         <div className="chat__info-users">
           <div className="placeholder"></div>
           <div className="placeholder"></div>
@@ -43,10 +41,10 @@ const Chat = ({chatId, uid}) => {
           <img src="" alt="User Settings"/> */}
         </div>
       </div>
-      <Messages chatId={chatId}/>
-      <Input chatId={chatId} uid={uid}/>
+      <Messages chatId={chatId} uid={uid} />
+      <Input chatId={chatId} uid={uid} />
     </div>
-  )
-}
+  );
+};
 
-export default Chat
+export default Chat;

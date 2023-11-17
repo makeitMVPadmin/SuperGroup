@@ -67,17 +67,6 @@ async function changeDocumentId (collectionName, oldId, newId) {
           });
           console.log("User added:", uid);
         }
-      //   await addDoc(collection(db, "users"), {
-      //     displayName: fullName,
-      //     email: email,
-      //     photoUrl: photoUrl,
-      //     uid: uid
-      // })
-        // const docRef = await addDoc(collection(db, "userChats"),{ });
-  
-        
-        // await changeDocumentId("userChats", docRef.id, uid)
-        // console.log(uid)
       } catch (error) {
         console.error("Error signing in with Clerk token:", error);
       }
