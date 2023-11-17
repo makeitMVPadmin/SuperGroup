@@ -1,4 +1,11 @@
 .chatdetails{
     flex: 1;
     border-left: 1px black solid;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &__title{
+        margin: 2rem;
+        text-decoration: underline;
+    }
 }

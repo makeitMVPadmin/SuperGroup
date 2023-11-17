@@ -2,18 +2,20 @@
 
 .input{
     height: 3.175rem;
-    background-color: $secondary-cream;
+    background-color: white;
     padding: 0.875rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     &__field{
-        width: 100%;
+        width: 90%;
         border: none;
         outline: none;
         color: black;
         font-size: 1rem;
-        background-color: $secondary-cream;
+        background-color: $secondary-input;
         font-size: 1.1rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
     }
 }

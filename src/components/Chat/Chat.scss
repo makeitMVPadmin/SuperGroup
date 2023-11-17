@@ -4,11 +4,13 @@
 }
 
 .chat__info{
-    height: 3.125rem;
-    background-color: $secondary-cream;
+    height: 4rem;
+    background-color: $secondary-grey;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 1rem;
+    font-weight: 600;
     &-users{
         display: flex;
     }

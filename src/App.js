@@ -5,17 +5,16 @@ import HomePage from './pages/HomePage/HomePage';
 import LandingPage from './pages/LandingPage/LandingPage';
 import ChatPage from "./pages/ChatPage/ChatPage"
 
-
 function App() {
 
   const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
-  
+  console.log(clerkPubKey);
+
   const ClerkWithRoutes = () => {
     const navigate = useNavigate()
   
     return (
       <ClerkProvider 
-            
       publishableKey={clerkPubKey}
       navigate={(to) => navigate(to)}
       >
@@ -33,27 +32,27 @@ function App() {
             path="/home"
             element={
             <>
-            <HomePage />
-              {/* <SignedIn>
+            {/* <HomePage /> */}
+              <SignedIn>
                 <HomePage />
               </SignedIn>
                <SignedOut>
                 <RedirectToSignIn />
-             </SignedOut> */}
+             </SignedOut>
             </>
             }
           />
           <Route
-            path="/chat"
+            path="/chat/:chatId"
             element={
             <>
-            <ChatPage />
-              {/* <SignedIn>
+            {/* <ChatPage /> */}
+              <SignedIn>
                 <ChatPage />
               </SignedIn>
                <SignedOut>
                 <RedirectToSignIn />
-             </SignedOut> */}
+             </SignedOut>
             </>
             }
           />
