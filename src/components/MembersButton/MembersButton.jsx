@@ -12,7 +12,9 @@ const MembersButton = () => {
   };
   return (
     <>
-      <button onClick={toggleMemberModal}>Members</button>
+      <button className="members__button" onClick={toggleMemberModal}>
+        Members
+      </button>
       <Modal
         isOpen={isMembersModalOpen}
         onRequestClose={setMembersModalOpen}

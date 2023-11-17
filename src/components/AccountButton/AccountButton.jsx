@@ -11,8 +11,10 @@ const AccountButton = () => {
     setAccountProfileModalOpen(!accountProfileModalOpen);
   };
   return (
-    <>
-      <button onClick={toggleAccountProfileModal}>Settings</button>
+    <div>
+      <button className="account__button" onClick={toggleAccountProfileModal}>
+        Settings
+      </button>
       <Modal
         isOpen={accountProfileModalOpen}
         onRequestClose={setAccountProfileModalOpen}
@@ -28,7 +30,7 @@ const AccountButton = () => {
           <UserProfile />
         </div>
       </Modal>
-    </>
+    </div>
   );
 };
 

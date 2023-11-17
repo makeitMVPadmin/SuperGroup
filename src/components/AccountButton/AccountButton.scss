@@ -3,37 +3,19 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/global" as *;
 
-.ReactModal__Overlay {
-  background-color: rgba(0, 0, 0, 0.8) !important;
-  padding: 5%;
-}
-
-.ReactModal__Content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80%;
-  background: none;
-}
-.modal {
-  background-color: rgba(0, 0, 0, 0) !important;
-}
-.modal-content {
-  max-height: 141.9%;
-  overflow-y: auto;
-  width: 70%;
-  max-width: 70%;
-  margin: auto;
-  margin-bottom: 19rem;
-  border-radius: 10px;
-}
-.modal-close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
+.account__button {
+  background-image: url("../../assets/icons/Setting.svg");
+  background-repeat: no-repeat;
+  background-position: center left 0.15rem;
+  padding-bottom: 0.25rem;
+  background-color: transparent;
+  width: 10.1875rem;
+  flex: 1 0 0;
+  height: 2.125rem;
+  color: #525050;
+  text-align: center;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 800;
   border: none;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
 }
