@@ -1,12 +1,41 @@
+import { useEffect, useState } from "react"
 import Input from "../Input/Input"
 import Messages from "../Messages/Messages"
 import "./Chat.scss"
+import { getDoc, doc } from "firebase/firestore"
+import { db } from "../../firebase-config"
 
-const Chat = () => {
+const Chat = ({chatId, uid}) => {
+
+  const [chatData, setChatData] = useState(null);
+
+  useEffect(() => {
+    // Fetch chat data from Firestore based on chatId
+    const fetchChatData = async () => {
+      try {
+        const chatRef = doc(db, "chats", chatId);
+        const chatSnapshot = await getDoc(chatRef);
+
+        if (chatSnapshot.exists()) {
+          const chatInfo = chatSnapshot.data();
+          setChatData(chatInfo);
+        } else {
+          // Handle the case where the chat does not exist
+          console.error("Chat not found");
+        }
+      } catch (error) {
+        console.error("Error fetching chat data:", error);
+      }
+    };
+
+    fetchChatData();
+  }, [chatId]);
+
+
   return (
     <div className="chat">
       <div className="chat__info">
-        <span>Corprate Groupchat</span>
+        <span>{chatData ? chatData.groupName : "Loading..."}</span>
         <div className="chat__info-users">
           <div className="placeholder"></div>
           <div className="placeholder"></div>
@@ -14,8 +43,8 @@ const Chat = () => {
           <img src="" alt="User Settings"/> */}
         </div>
       </div>
-      <Messages/>
-      <Input/>
+      <Messages chatId={chatId}/>
+      <Input chatId={chatId} uid={uid}/>
     </div>
   )
 }

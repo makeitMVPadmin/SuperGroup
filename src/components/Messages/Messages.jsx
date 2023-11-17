@@ -1,42 +1,42 @@
 import React, { useEffect, useState } from "react";
 import Message from "../Message/Message";
 import "./Messages.scss";
-import { onSnapshot, doc, collection } from "firebase/firestore";
+import { onSnapshot, collection, orderBy, query } from "firebase/firestore";
 import { db } from "../../firebase-config";
-import { useUser } from "@clerk/clerk-react";
 
-const Messages = () => {
-  // const [messages, setMessages] = useState([]);
+const Messages = ({ chatId }) => {
+  const [messages, setMessages] = useState([]);
 
-  // const { user } = useUser();
+  useEffect(() => {
+    // Create a reference to the messages collection for the chat
+    const messagesCollection = collection(db, `chats/${chatId}/messages`);
 
-  // useEffect(() => {
-  //   const chatRef = collection(db, "chats", user.uid);
-  
-  //   const unSub = onSnapshot(chatRef, (querySnapshot) => {
-  //     const messageData = [];
-  //     querySnapshot.forEach((doc) => {
-  //       if (doc.exists()) {
-  //         messageData.push(doc.data());
-  //       }
-  //     });
-  //     setMessages(messageData);
-  //   }, (error) => {
-  //     console.error("Error fetching messages:", error);
-  //   });
-  
-  //   return () => {
-  //     unSub();
-  //   };
-  // }, [user.uid]);
-  
+    // Create a query to order messages by timestamp
+    const messagesQuery = query(messagesCollection, orderBy("timestamp"));
+
+    // Subscribe to changes in the messages collection
+    const unsubscribe = onSnapshot(messagesQuery, (snapshot) => {
+      const messageData = [];
+      snapshot.forEach((doc) => {
+        messageData.push({
+          id: doc.id,
+          ...doc.data(),
+        });
+      });
+      setMessages(messageData);
+    });
+
+    // Clean up the subscription when the component unmounts
+    return () => {
+      unsubscribe();
+    };
+  }, [chatId]);
 
   return (
     <div className="messages">
-      {/* {messages.map((m) => (
-        <Message message={m} key={m.id} />
-      ))} */}
-      <Message/>
+      {messages.map((message) => (
+        <Message key={message.id} message={message} />
+      ))}
     </div>
   );
 };
