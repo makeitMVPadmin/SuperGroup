@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import SignOut from "../../components/SignOut/SignOut";
 import SignIn from "../../components/SignIn/SignIn";
 import "./HomePage.scss";
@@ -15,10 +14,6 @@ import {
   getDocs,
   addDoc, // Added for adding messages
 } from "firebase/firestore";
-=======
-import "./HomePage.scss";
-// import SignIn from "../../components/SignIn/SignIn";
->>>>>>> develop
 
 import { useUser } from "@clerk/clerk-react";
 import { Link } from "react-router-dom";
@@ -146,7 +141,6 @@ const HomePage = () => {
   return (
     <div className="home">
       <h1 className="home__title"> Welcome !</h1>
-<<<<<<< HEAD
       <SignIn />
       <SignOut />
 
@@ -193,9 +187,6 @@ const HomePage = () => {
           ))}
         </ul>
       </div>
-=======
-      {/* <SignIn /> */}
->>>>>>> develop
     </div>
   );
 };
