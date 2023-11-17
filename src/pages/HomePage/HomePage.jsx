@@ -1,7 +1,5 @@
-// import SignOut from "../../components/SignOut/SignOut";
-// import SignIn from "../../components/SignIn/SignIn";
 import "./HomePage.scss";
-// import { OrganizationSwitcher, UserButton } from "@clerk/clerk-react";
+// import SignIn from "../../components/SignIn/SignIn";
 
 // import { useUser } from "@clerk/clerk-react";
 
@@ -14,11 +12,7 @@ const HomePage = () => {
   return (
     <div className="home">
       <h1 className="home__title"> Welcome !</h1>
-      {/* <SignIn />
-      <SignOut />
-
-      <OrganizationSwitcher />
-      <UserButton /> */}
+      {/* <SignIn /> */}
     </div>
   );
 };
