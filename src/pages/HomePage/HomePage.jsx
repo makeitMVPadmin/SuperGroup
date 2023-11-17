@@ -4,9 +4,10 @@ import "./HomePage.scss";
 import { OrganizationSwitcher, UserButton } from "@clerk/clerk-react";
 import { useState,useEffect } from "react";
 import { db } from "../../firebase-config"
-import { doc, setDoc,getDoc, collection } from "firebase/firestore";
+import { doc, setDoc,getDoc, collection, updateDoc, serverTimestamp, getDocs } from "firebase/firestore";
 
 import { useUser } from "@clerk/clerk-react";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const { user } = useUser();
@@ -18,12 +19,13 @@ const HomePage = () => {
   const [groupName, setGroupName] = useState('');
   const [selectedUsers, setSelectedUsers] = useState([]);
   const [userList, setUserList] = useState([]);
+  const [groupChats, setGroupChats] = useState([])
 
   // Function to fetch the user list from Firestore
   const fetchUserList = async () => {
     try {
       const userCollection = collection(db, 'users');
-      const querySnapshot = await getDoc(userCollection);
+      const querySnapshot = await getDocs(userCollection);
 
       const users = [];
       querySnapshot.forEach((doc) => {
@@ -43,9 +45,32 @@ const HomePage = () => {
     }
   };
 
+        // Function to fetch and update the list of group chats
+        const fetchGroupChats = async () => {
+          try {
+            const chatsCollection = collection(db, "chats");
+            const querySnapshot = await getDocs(chatsCollection);
+      
+            const chats = [];
+            querySnapshot.forEach((doc) => {
+              const chatData = doc.data();
+              chats.push({
+                id: doc.id,
+                groupName: chatData.groupName,
+                members: chatData.members,
+              });
+            });
+      
+            setGroupChats(chats);
+          } catch (error) {
+            console.error("Error fetching group chats:", error);
+          }
+        };
+
   useEffect(() => {
     // Fetch the user list when the component mounts
     fetchUserList();
+    fetchGroupChats();
   }, [uid]);
 
   // Function to handle user selection
@@ -79,13 +104,45 @@ const HomePage = () => {
       await setDoc(chatRef, {
         groupName,
         members: selectedUsers,
+        messages: [], // Include an empty array for messages
       });
+
+
+      //Update userChats with chat details
+            // Get a reference to the chat document
+            // const chatRef = doc(db, 'chats', groupChatId);
+
+            // Check if the document already exists
+            // const chatSnapshot = await getDoc(chatRef);
+
+      // for (const selectedUser of selectedUsers) {
+      //   console.log(selectedUsers);
+      //   console.log(selectedUser.photoUrl);
+      //   console.log(selectedUser.displayName);
+      //   await setDoc(doc(db, "userChats", selectedUser), {
+      //     [groupChatId + ".userInfo"]: {
+      //       uid: selectedUser,
+      //       displayName: selectedUser.displayName,
+      //       photoUrl: selectedUser.photoUrl,
+      //     },
+      //     [groupChatId + ".date"]: serverTimestamp()
+      //   });
+      // }
+      // await setDoc(doc(db, "userChats", uid),{
+      //   [groupChatId +".userInfo"]:{
+      //     uid: user.uid,
+      //     displayName: user.displayName,
+      //     photoUrl: user.photoUrl
+      //   },
+      //   [groupChatId +".date"]: serverTimestamp()
+      // });
 
       // Reset form
       setGroupName('');
       setSelectedUsers([]);
     }
   };
+
 
 
 
@@ -121,6 +178,21 @@ const HomePage = () => {
       </ul>
       <button onClick={createGroupChat}>Create Group Chat</button>
     </div>
+    <div>
+        <h2>Group Chats</h2>
+        <ul>
+          {groupChats.map((chat) => (
+          <Link key={chat.id} to={`/chat/${chat.id}`}>
+            <li>
+            <strong>{chat.groupName}</strong>
+            <p>Members: {chat.members.join(", ")}</p>
+            </li>
+            </Link>
+  ))}
+</ul>
+
+
+      </div>
     </div>
   );
 };
