@@ -3,13 +3,14 @@ import React, { useState, useRef } from "react";
 import { db, auth } from "../../firebase-config";
 import logo from "../../assets/logos/logo1.svg";
 import logo2 from "../../assets/logos/logo2.svg";
-import up from "../../assets/icons/up.svg";
-import down from "../../assets/icons/down.svg";
+// import up from "../../assets/icons/up.svg";
+// import down from "../../assets/icons/down.svg";
 import profile from "../../assets/images/Mohan-muruge.jpg";
 import { Auth } from "../Auth/Auth";
 import { TestChat } from "../TestChat/TestChat";
 import { signOut } from "firebase/auth";
 import Cookies from "universal-cookie";
+
 const cookies = new Cookies();
 
 const Test = () => {
@@ -100,8 +101,8 @@ const Test = () => {
             <div className="test__feedback">
               <span className="test__span">Was this helpful?</span>
               <div className="test__feedback-icons">
-                <img className="test__img1" src={up} alt="Thumbs up" />
-                <img className="test__img2" src={down} alt="Thumbs down" />
+                {/* <img className="test__img1" src={up} alt="Thumbs up" />
+                <img className="test__img2" src={down} alt="Thumbs down" /> */}
               </div>
             </div>
           </div>
