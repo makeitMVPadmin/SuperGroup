@@ -6,11 +6,13 @@ import { v4 as uuidv4 } from "uuid";
 import { useUser } from "@clerk/clerk-react";
 
 const Input = ({ chatId }) => {
-  const [messageText, setMessageText] = useState("");
+  const [messageText, setMessageText] = useState(""); //Keeps track of the input field value for the message text.
+  const [aiResponse, setAiResponse] = useState(""); 
   const { user } = useUser();
-  const uid = user.id;
+  const uid = user.id;//Retrieve the logged-in user's ID
   const uuid = uuidv4();
-
+console.log(user)
+  //function triggered wheb users clicks send button
   const handleSendMessage = async () => {
     if (messageText.trim() === "") {
       return; // Don't send empty messages
@@ -21,7 +23,10 @@ const Input = ({ chatId }) => {
       text: messageText,
       senderId: uid,
       timestamp: new Date().toISOString(), // Current timestamp
+      name: user.fullName,
+      aiResponse: aiResponse,
     };
+
 
     try {
       // Create a new message document in the chatRoom's 'messages' subcollection

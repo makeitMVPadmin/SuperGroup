@@ -24,6 +24,7 @@ const Messages = ({ uid, chatId }) => {
         const message = doc.data();
         // Format the timestamp to a string (e.g., using toLocaleString())
         const formattedTimestamp = new Date(message.timestamp.seconds * 1000).toLocaleString();
+        console.log(formattedTimestamp)
         messageData.push({
           id: doc.id,
           ...message,

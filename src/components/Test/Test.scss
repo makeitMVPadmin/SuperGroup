@@ -30,7 +30,18 @@
   //   object-fit: cover;
   //   margin: 1.5rem 1rem 1rem 0rem;
   // }
+  &__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+  }
 
+  &__image {
+    border-radius: 50%;
+    height: 59px;
+    width: 59px;
+    object-fit: cover;
+  }
   &__ai {
     display: flex;
     flex-direction: column;

@@ -3,13 +3,15 @@ import "./Message.scss";
 import { useUser } from "@clerk/clerk-react";
 
 const Message = ({ message, uid }) => {
-  const { text, senderId, createdAt } = message;
+  const { text, name, senderId, timestamp, aiResponse } = message;
   const user = useUser()
-  const isCurrentUser = senderId === uid;
+  const isCurrentUser = senderId === uid; // Check if the message is from the current user
   console.log(uid)
-  
-  const ref = useRef();
+  console.log(timestamp)
 
+  const ref = useRef(); // Ref for scrolling to the last message
+
+  // Effect to scroll into view when a new message is rendered
   useEffect(()=>{
     ref.current?.scrollIntoView({behavior:"smooth"})
   },[message])
@@ -20,11 +22,14 @@ const Message = ({ message, uid }) => {
       <div className="message__info">
         {/* Profile picture */}
         <div className="placeholder"></div>
-        {/* Timestamp */}
-        <span>{createdAt}</span>
-      </div>
       <div className="message__content">
         <p className="message__content-text">{text}</p>
+        <div>
+          <span className="message__name">{name}</span>
+          <span className="message__time">{timestamp}</span>
+        </div>
+        <p>{aiResponse}</p>
+      </div>
       </div>
     </div>
   );
