@@ -26,6 +26,7 @@ const LandingPage = () => {
   const [linkedInError, setLinkedInError] = useState(" ");
   const [formSubmitted, setFormSubmitted] = useState(false);
 
+
   const waitlistCollectionRef = collection(db, "waitlist");
   const addToWaitlist = async ({ name, email, linkedIn }) => {
     await addDoc(waitlistCollectionRef, {
