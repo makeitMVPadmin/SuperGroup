@@ -1,11 +1,11 @@
 import "./ChatDetails.scss";
 import ChatIcon from "../../assets/icons/chaticon.png";
 import AccountButton from "../AccountButton/AccountButton";
-import MembersButton from "../MembersButton/MembersButton";
 import DashboardButton from "../DashboardButton/DashboardButton";
 import SignOut from "../SignOut/SignOut";
+import AddMembers from "../AddMembers/AddMembers";
 
-const ChatDetails = () => {
+const ChatDetails = ({ chatId ,selectedUsers }) => {
   return (
     <div className="chatdetails">
       <div>
@@ -14,7 +14,7 @@ const ChatDetails = () => {
       <div>
         <h2 className="chatdetails__super">Supergroup</h2>
       </div>
-      <MembersButton />
+      <AddMembers chatId={chatId} selectedUsers={selectedUsers} />
       <DashboardButton />
       <AccountButton />
       <SignOut />

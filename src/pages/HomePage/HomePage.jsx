@@ -21,10 +21,6 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const { user } = useUser();
-  console.log(user.fullName);
-  console.log(user.emailAddresses[0].emailAddress);
-  console.log(user.id);
-  console.log(user.imageUrl);
   const uid = user.id;
   const [groupName, setGroupName] = useState("");
   const [selectedUsers, setSelectedUsers] = useState([]);

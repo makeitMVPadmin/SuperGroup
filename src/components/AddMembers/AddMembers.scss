@@ -1,0 +1,83 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+
+.react-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Style for the modal content container */
+  .modal-content {
+    background-color: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    max-width: 16rem;
+    height: fit-content;
+    padding: 3.2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+
+.Add__button {
+    background-image: url("../../assets/icons/Member.svg");
+    background-repeat: no-repeat;
+    background-position: center left 0.35rem;
+    padding-bottom: 0.25rem;
+    padding-left: 1.9rem;
+    margin-bottom: 1.75rem;
+    background-color: transparent;
+    width: 10.1875rem;
+    flex: 1 0 0;
+    max-height: 2.125rem;
+    color: #525050;
+    text-align: center;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 800;
+    border: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.addPrompt{
+    &__title{
+        margin-bottom:1.5rem;
+    }
+    &__check{
+        margin-right: 1rem;
+    }
+    &__members{
+        color: grey;
+        font-weight: 600;
+    }
+}
+
+.addPrompt__button{
+    width: 10.1875rem;
+    height: 2.125rem;
+    color: $primary-white;
+    text-align: center;
+    font-size: 1.0625rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    border: none;
+    border-radius: 0.625rem;
+    background: #3577b3;
+    margin-top: 1.5rem;
+}
