@@ -97,13 +97,13 @@ const AddMembers = ({chatId, selectedUsers = [], handleUserSelection }) => {
           <button className="modal-close-button" onClick={toggleAddModal}>
             X
           </button>
-          <div className="white-box">
-            <h3>Available Members:</h3>
+          <div className="addPrompt">
+            <h3 className="addPrompt__title">Available Members:</h3>
             <ul>
               {availableMembers.map((user) => (
                 <li key={user.id}>
-                  <label>
-                    <input
+                  <label className="addPrompt__members">
+                    <input className="addPrompt__check"
                       type="checkbox"
                       value={user.id}
                       checked={selectedMembers.includes(user.id)}
@@ -114,7 +114,7 @@ const AddMembers = ({chatId, selectedUsers = [], handleUserSelection }) => {
                 </li>
               ))}
             </ul>
-            <button onClick={handleSubmit}>Submit</button>
+            <button className="addPrompt__button" onClick={handleSubmit}>Submit</button>
           </div>
         </div>
       </Modal>

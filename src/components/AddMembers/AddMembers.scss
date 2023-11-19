@@ -22,8 +22,12 @@
     border-radius: 8px; /* Rounded corners */
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Drop shadow */
-    max-width: 400px; /* Adjust the width as needed */
+    max-width: 16rem;
+    height: fit-content;
+    padding: 3.2rem;
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
   
 
@@ -39,4 +43,35 @@
   border: none;
   border-radius: 0.625rem;
   background: #3577b3;
+}
+
+ul{
+    list-style: none;
+}
+
+.addPrompt{
+    &__title{
+        margin-bottom:1.5rem;
+    }
+    &__check{
+        margin-right: 1rem;
+    }
+    &__members{
+        font-weight: 600;
+    }
+}
+
+.addPrompt__button{
+    width: 10.1875rem;
+    height: 2.125rem;
+    color: $primary-white;
+    text-align: center;
+    font-size: 1.0625rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    border: none;
+    border-radius: 0.625rem;
+    background: #3577b3;
+    margin-top: 1.5rem;
 }
