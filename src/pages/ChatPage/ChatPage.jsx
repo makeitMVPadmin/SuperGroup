@@ -1,6 +1,5 @@
 import Chat from "../../components/Chat/Chat"
 import ChatDetails from "../../components/ChatDetails/ChatDetails"
-import AddMembers from "../../components/AddMembers/AddMembers"
 import "./ChatPage.scss"
 import { useParams } from "react-router-dom"
 import { useUser } from "@clerk/clerk-react"
@@ -34,9 +33,9 @@ const ChatPage = () => {
 
   return (
     <div className="chatpage">
-      <div className="container">
-        <Chat chatId={chatId} uid={uid}/>
-        <ChatDetails chatId={chatId} selectedUsers={selectedUsers} />
+      <div className="chatpage__container">
+        <ChatDetails chatId={chatId} />
+        <Chat chatId={chatId} selectedUsers={selectedUsers} uid={uid} />
       </div>
     </div>
   );

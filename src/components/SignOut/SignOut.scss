@@ -4,16 +4,19 @@
 @use "../../styles/partials/global" as *;
 
 .logout__button {
-  width: 11.75rem;
-  height: 3.125rem;
-  flex-shrink: 0;
-  color: $primary-white;
+  background-image: url("../../assets/icons/Signout.svg");
+  background-repeat: no-repeat;
+  background-position: center left 0.19rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.38rem;
+  background-color: transparent;
+  width: 10.1875rem;
+  flex: 1 0 0;
+  max-height: 2.125rem;
+  color: #525050;
   text-align: center;
-  font-size: 1.6875rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 800;
-  line-height: normal;
   border: none;
-  border-radius: 0.625rem;
-  background: #09f;
 }

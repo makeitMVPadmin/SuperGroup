@@ -86,7 +86,7 @@ const AddMembers = ({chatId, selectedUsers = [], handleUserSelection }) => {
   return (
     <>
       <button className="Add__button" onClick={toggleAddModal}>
-        + Add Members
+        + Members
       </button>
       <Modal
         isOpen={isAddModalOpen}

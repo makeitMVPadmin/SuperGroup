@@ -31,18 +31,26 @@ const Chat = ({ chatId, uid }) => {
   }, [chatId]);
 
   return (
-    <div className="chat">
-      <div className="chat__info">
-        <span>{chatData ? chatData.chatRoomName : "Loading..."}</span>
-        <div className="chat__info-users">
-          <div className="placeholder"></div>
-          <div className="placeholder"></div>
-          {/* <img src="" alt="Active Users"/>
-          <img src="" alt="User Settings"/> */}
-        </div>
+    <div className="chat__container-x">
+      <div>
+        <h2 className="chat__grand-title">Corporate GroupChat</h2>
+        <h3 className="chat__saying">
+          Where we figure out what we need to figure out
+        </h3>
       </div>
-      <Messages chatId={chatId} uid={uid} />
-      <Input chatId={chatId} uid={uid} />
+      <div className="chat">
+        <div className="chat__info">
+          <span>{chatData ? chatData.chatRoomName : "Loading..."}</span>
+          <div className="chat__info-users">
+            <div className="placeholder"></div>
+            <div className="placeholder"></div>
+            {/* <img src="" alt="Active Users"/>
+          <img src="" alt="User Settings"/> */}
+          </div>
+        </div>
+        <Messages chatId={chatId} uid={uid} />
+        <Input chatId={chatId} uid={uid} />
+      </div>
     </div>
   );
 };
