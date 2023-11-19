@@ -1,16 +1,23 @@
 import "./Input.scss";
 import React, { useState } from "react";
 import { db } from "../../firebase-config";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 import { useUser } from "@clerk/clerk-react";
-
+import paper from "../../assets/icons/paper.svg"
+import mountain from "../../assets/icons/mountain.jpg"
+import rectangleSend from "../../assets/icons/rectangleSend.svg"
+import send from "../../assets/icons/send.svg"
 const Input = ({ chatId }) => {
-  const [messageText, setMessageText] = useState("");
+  const [messageText, setMessageText] = useState(""); //Keeps track of the input field value for the message text.
+  const [aiResponse, setAiResponse] = useState("");
   const { user } = useUser();
-  const uid = user.id;
+  const uid = user.id;//Retrieve the logged-in user's ID
   const uuid = uuidv4();
+  console.log(user)
+  console.log(user.imageUrl);
 
+  //function triggered wheb users clicks send button
   const handleSendMessage = async () => {
     if (messageText.trim() === "") {
       return; // Don't send empty messages
@@ -21,7 +28,10 @@ const Input = ({ chatId }) => {
       text: messageText,
       senderId: uid,
       timestamp: new Date().toISOString(), // Current timestamp
+      name: user.fullName,
+      aiResponse: aiResponse,
     };
+
 
     try {
       // Create a new message document in the chatRoom's 'messages' subcollection
@@ -43,10 +53,13 @@ const Input = ({ chatId }) => {
         placeholder="Type something..."
         value={messageText}
         onChange={(e) => setMessageText(e.target.value)}
+
       />
-      <div className="input__send">
-        <button onClick={handleSendMessage}>Send</button>
-      </div>
+      {/* <img className="input__field-img" scr={mountain} /> */}
+      <button className="input__btn"><img className="input__img" src={paper} /></button>
+      {/* <div className="input__send"> */}
+      <img className="input__send" src={send} onClick={handleSendMessage} />
+      {/* </div> */}
     </div>
   );
 };

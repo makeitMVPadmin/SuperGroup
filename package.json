@@ -3,23 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@clerk/clerk-react": "^4.27.2",
+    "@clerk/clerk-react": "^4.28.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "cors": "^2.8.5",
+    "diagnostics_channel": "^1.1.0",
     "dotenv": "^16.3.1",
+    "eslint-config-google": "^0.14.0",
     "firebase": "^10.5.2",
+    "firebase-admin": "^11.11.0",
+    "firebase-functions": "^4.5.0",
     "firebase-tools": "^12.7.0",
+    "nodemon": "^3.0.1",
+    "openai": "^4.17.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.17.0",
     "react-scripts": "5.0.1",
-    "sass": "^1.66.1"
+    "sass": "^1.66.1",
+    "universal-cookie": "^6.1.1",
+    "util": "^0.12.5"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:backend": "nodemon server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -41,5 +50,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "eslint": "^8.53.0"
   }
 }

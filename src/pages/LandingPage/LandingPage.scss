@@ -4,37 +4,48 @@
 @use "../../styles/partials/global" as *;
 
 .landing {
-  font-family: "Gilroy";
   background-color: $primary-white;
+  // width: 100%;
   &__header {
-    padding: 0.81rem 8rem 0.81rem 6rem;
+    padding: 1.5rem 6.25rem 1.5rem 5.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   &__header-logo {
-    width: 16rem;
-    height: 4.9375rem;
+    width: 11.5rem;
+    height: 4.125rem;
     flex-shrink: 0;
   }
   &__header-btn {
-    width: 11.25rem;
-    height: 3.875rem;
+    font-family: "Corben", serif;
     @include font-h1-button;
+    border: 5px solid $primary-yellow;
     background-color: $primary-white;
-    border: 6px solid $primary-yellow;
+    padding: 0 1rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
   }
   &__hero {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1.5rem 4rem 0 5.5rem;
   }
   &__hero-container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
   }
+  &__hero-topcontainer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
   &__hero-img {
-    width: 20rem;
+    width: 39%;
   }
 
   &__title {
@@ -42,98 +53,223 @@
     font-family: "Corben", serif;
     margin-block-start: 0;
     margin-block-end: 0;
+    font-size: 3.45rem;
   }
   &__subtitle {
     font-family: "Corben", serif;
     @include font-h2-subheader;
     margin-block-start: 0;
     margin-block-end: 0;
+    padding-bottom: 0.125rem;
+    font-size: 1.65rem;
+    &--hero {
+      margin-right: 10rem;
+      font-size: 1.65rem;
+    }
+    &--features {
+      padding-bottom: 2.875rem;
+
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    &--process {
+      padding-bottom: 2.75rem;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      padding-right: 14rem;
+    }
+    &--waitlist {
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      padding-bottom: 1.75rem;
+    }
   }
   &__btn {
     border: 3px solid $primary-black;
-    margin: 1.75rem;
-    width: 27.5rem;
+    margin-bottom: 5rem;
+    margin-top: 1.5rem;
+    width: 23.5rem;
     padding: 1rem;
     background-color: $primary-white;
+    font-family: "Poppins", sans-serif;
     @include font-h1-button;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1.45rem;
+  }
+  &__arrow-right {
+    position: absolute;
+    top: 800px;
+    left: 130px;
+    width: 19%;
+    @include desktop2 {
+      display: none;
+    }
+    @include desktop1 {
+      display: none;
+    }
   }
   &__features {
+    padding: 12rem 5rem;
     text-align: center;
     background-color: $secondary-cream;
   }
   &__features-container {
     display: flex;
-    gap: 2rem;
+    justify-content: center;
+    gap: 3rem;
   }
+
   &__feature {
     border-radius: 3.75rem;
     background: rgba(255, 210, 47, 0.4);
-    padding: 2.25rem;
+    padding: 2.5rem 1.75rem 2.15rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   }
-
+  &__img {
+    width: 40%;
+    flex-shrink: 0;
+  }
   &__description {
-    font-family: "Corben", serif;
     margin-block-start: 0;
     margin-block-end: 0;
-    // font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
+    @include font-h1-body;
+    font-size: 1.275rem;
+    font-size: 1.2rem;
+  }
+  &__arrow-left {
+    position: absolute;
+    top: 1670px;
+    left: 932px;
+    width: 16%;
+    @include desktop2 {
+      display: none;
+    }
+    @include desktop1 {
+      display: none;
+    }
+  }
+  &__logo {
+    width: 14.5rem;
   }
   &__process {
-  }
-  &__process-container {
+    width: 100%;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+  &__process-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
+  }
   &__step {
     display: flex;
-    margin-bottom: 7.63rem;
+    width: 60rem;
+    height: 23.5625rem;
+    margin-bottom: 6rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    @include desktop1 {
+      width: 56rem;
+    }
+
     &--first {
       background-color: rgba(9, 84, 176, 0.06);
       border: 8px solid $secondary-dark-blue;
+      margin-right: 5.5rem;
+      background-image: url("../../assets/images/girl.png");
+      background-position: 90% center;
+      background-repeat: no-repeat;
+      background-size: auto 470px;
+      justify-content: flex-start;
     }
     &--second {
       background-color: rgba(255, 210, 47, 0.15);
       border: 8px solid $primary-yellow;
+      margin-left: 7rem;
+      background-image: url("../../assets/images/phone.png");
+      background-repeat: no-repeat;
+      background-position: 10% center;
+      background-size: 380px 400px;
+      justify-content: flex-end;
     }
     &--third {
       background-color: rgba(255, 112, 112, 0.12);
       border: 8px solid $secondary-red;
+      margin-right: 5.5rem;
+      background-image: url("../../assets/images/networks.png");
+      background-repeat: no-repeat;
+      background-position: 90% center;
+      background-size: contain;
+      justify-content: flex-start;
     }
   }
-  &__img {
-    border: none;
+  &__body {
+    width: 27%;
+    padding: 3rem;
   }
+
+  &__waitlist {
+    background-color: $secondary-cream;
+    text-align: center;
+    padding: 9.5rem 0 10rem 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../../assets/images/cloud.svg");
+    background-size: contain;
+    width: 100%;
+  }
+
   &__form {
     display: flex;
     flex-direction: column;
-  }
-  &__label {
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 2rem 0 2rem;
   }
   &__input {
+    padding: 0.5rem 4rem 0.5rem 1rem;
+    @include font-h1-body;
+    color: #a7a7a7;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    border: none;
+    background-color: #f0f0f0;
+    &::placeholder {
+      color: #a7a7a7;
+    }
   }
   &__btn-submit {
+    font-family: "Corben", serif;
+    @include font-h1-button;
+    border: 5px solid $primary-yellow;
+    background-color: $primary-white;
+    padding: 0 1.5rem;
+    margin: 1rem 0 1rem 0;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
   }
-  &__footer {
-    background-color: $secondary-cream;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    gap: 2rem;
+  &__error {
+    color: $secondary-red;
+    font-family: "Poppins", sans-serif;
+    @include font-h1-body;
+    font-size: 1.275rem;
+    white-space: pre-line;
+    height: 1.275rem;
   }
-  &__footer-container {
+  &__label {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 1rem;
   }
-  &__footer-subheading {
-    font-family: "Corben", serif;
-  }
-  &__items {
-    text-align: left;
-  }
-  &__item {
-    font-family: "Gilroy";
-    list-style-type: none;
+  &__input-error {
+    border: solid 4px $secondary-red;
   }
 }

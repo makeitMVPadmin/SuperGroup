@@ -1,0 +1,28 @@
+[debug] [2023-11-17T21:11:45.360Z] ----------------------------------------------------------------------
+[debug] [2023-11-17T21:11:45.362Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2023-11-17T21:11:45.362Z] CLI Version:   12.8.1
+[debug] [2023-11-17T21:11:45.362Z] Platform:      darwin
+[debug] [2023-11-17T21:11:45.362Z] Node Version:  v18.17.1
+[debug] [2023-11-17T21:11:45.366Z] Time:          Fri Nov 17 2023 16:11:45 GMT-0500 (Eastern Standard Time)
+[debug] [2023-11-17T21:11:45.366Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-17T21:11:45.406Z] Field ".functions" in "firebase.json" is possibly invalid: should be object
+[debug] [2023-11-17T21:11:45.406Z] Object ".functions[0]" in "firebase.json" has unknown property: {"additionalProperty":"cors"}
+[debug] [2023-11-17T21:11:45.406Z] Field ".functions" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2023-11-17T21:11:45.409Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-17T21:11:45.409Z] > authorizing via signed-in user (gracielamanzsousa@gmail.com)
+[debug] [2023-11-17T21:11:45.409Z] [iam] checking project supergroup-2cd54 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-11-17T21:11:45.413Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/supergroup-2cd54:testIamPermissions [none]
+[debug] [2023-11-17T21:11:45.413Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/supergroup-2cd54:testIamPermissions x-goog-quota-user=projects/supergroup-2cd54
+[debug] [2023-11-17T21:11:45.413Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/supergroup-2cd54:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-11-17T21:11:45.607Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/supergroup-2cd54:testIamPermissions 200
+[debug] [2023-11-17T21:11:45.607Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/supergroup-2cd54:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-11-17T21:11:45.607Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/supergroup-2cd54/serviceAccounts/supergroup-2cd54@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-11-17T21:11:45.607Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/supergroup-2cd54/serviceAccounts/supergroup-2cd54@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-11-17T21:11:45.760Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/supergroup-2cd54/serviceAccounts/supergroup-2cd54@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-11-17T21:11:45.760Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/supergroup-2cd54/serviceAccounts/supergroup-2cd54@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'supergroup-2cd54'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint

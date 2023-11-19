@@ -1,21 +1,61 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
 
-.input{
+.input {
+    font-family: "Sora", sans-serif;
     height: 3.175rem;
     background-color: white;
     padding: 0.875rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    &__field{
+
+    &__field {
+
         width: 90%;
-        border: none;
+
         outline: none;
-        color: black;
         font-size: 1rem;
         background-color: $secondary-input;
         font-size: 1.1rem;
         padding: 0.5rem;
         border-radius: 0.5rem;
+        border-radius: 10px;
+        border: 1px solid #DADADA;
+
+        background: #FFF;
+        color: #AEAEAE;
+        font-family: "Sora", sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+
+        &::placeholder {
+            color: #a7a7a7;
+        }
+
+    }
+
+    &__btn {
+        border: none;
+        background-color: white;
+    }
+
+    &__img {
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+    }
+
+    &__send {
+        width: 34px;
+        height: 34px;
+        flex-shrink: 0;
+        background-image: url("../../assets/icons/rectangleSend.svg");
+        padding-block: 0px;
+        padding-inline: 0px;
+        border-radius: 7px;
     }
 }
