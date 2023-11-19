@@ -20,7 +20,7 @@ const AccountButton = () => {
         onRequestClose={setAccountProfileModalOpen}
         className="modal"
       >
-        <div className="modal-content">
+        <div className="modal-content-x">
           <button
             className="modal-close-button"
             onClick={toggleAccountProfileModal}

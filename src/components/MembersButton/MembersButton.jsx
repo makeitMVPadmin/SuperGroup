@@ -20,7 +20,7 @@ const MembersButton = () => {
         onRequestClose={setMembersModalOpen}
         className="modal"
       >
-        <div className="modal-content">
+        <div className="modal-content-x">
           <button className="modal-close-button" onClick={toggleMemberModal}>
             X
           </button>
