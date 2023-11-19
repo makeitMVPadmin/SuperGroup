@@ -10,7 +10,6 @@ const ChatPage = () => {
   const uid = user.id
 
   // Now you can access chatId as a variable
-  console.log(chatId);
   return (
     <div className="chatpage">
         <div className="container">

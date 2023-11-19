@@ -6,7 +6,6 @@ const Message = ({ message, uid }) => {
   const { text, senderId, createdAt } = message;
   const user = useUser()
   const isCurrentUser = senderId === uid;
-  console.log(uid)
   
   const ref = useRef();
 
@@ -16,7 +15,6 @@ const Message = ({ message, uid }) => {
 
   return (
     <div ref={ref} className={`message ${isCurrentUser ? "owner" : "other-user"}`}>
-      {console.log(isCurrentUser)}
       <div className="message__info">
         {/* Profile picture */}
         <div className="placeholder"></div>
