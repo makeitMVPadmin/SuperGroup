@@ -1,7 +1,8 @@
 import SignOut from "../../components/SignOut/SignOut";
 import SignIn from "../../components/SignIn/SignIn";
 import "./HomePage.scss";
-import { OrganizationSwitcher, UserButton } from "@clerk/clerk-react";
+import AccountButton from "../../components/AccountButton/AccountButton";
+import MembersButton from "../../components/MembersButton/MembersButton";
 import { useState, useEffect } from "react";
 import { db } from "../../firebase-config";
 import {
@@ -143,9 +144,8 @@ const HomePage = () => {
       <h1 className="home__title"> Welcome !</h1>
       <SignIn />
       <SignOut />
-
-      <OrganizationSwitcher />
-      <UserButton />
+      <MembersButton />
+      <AccountButton />
       <div>
         <h2>Create a Group Chat</h2>
         <label>
@@ -192,7 +192,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-
-
-
