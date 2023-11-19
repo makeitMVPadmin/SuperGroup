@@ -1,6 +1,7 @@
-import "./ChatDetails.scss"
+import AddMembers from "../AddMembers/AddMembers";
+import "./ChatDetails.scss";
 
-const ChatDetails = () => {
+const ChatDetails = ({ chatId ,selectedUsers }) => {
   return (
     <div className="chatdetails">
       <div className="chatdetails__title">
@@ -9,8 +10,9 @@ const ChatDetails = () => {
       <div className="chatdetails__members">
         <h4>Members</h4>
       </div>
+      <AddMembers chatId={chatId} selectedUsers={selectedUsers} />
     </div>
-  )
-}
+  );
+};
 
-export default ChatDetails
+export default ChatDetails;

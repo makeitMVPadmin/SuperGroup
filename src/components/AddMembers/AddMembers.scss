@@ -1,0 +1,22 @@
+.react-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Style for the modal content container */
+  .modal-content {
+    background-color: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    max-width: 400px; /* Adjust the width as needed */
+    width: 100%;
+  }
+  
