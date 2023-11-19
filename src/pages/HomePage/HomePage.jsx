@@ -120,14 +120,14 @@ const HomePage = () => {
         const messagesCollection = collection(chatRoomRef, "messages");
 
         // Example message
-        const exampleMessage = {
-          text: "Welcome to the chat!",
-          senderId: uid,
-          timestamp: serverTimestamp(),
-        };
+        // const exampleMessage = {
+        //   text: "Welcome to the chat!",
+        //   senderId: uid,
+        //   timestamp: serverTimestamp(),
+        // };
 
         // Add the example message to the 'messages' subcollection
-        await addDoc(messagesCollection, exampleMessage);
+        await addDoc(messagesCollection);
 
         // Reset form
         setGroupName("");

@@ -6,7 +6,7 @@ import { db } from "../../firebase-config";
 
 const Messages = ({ uid, chatId }) => {
   const [messages, setMessages] = useState([]);
-  
+
   useEffect(() => {
     // Create a reference to the messages collection for the chat room
     const chatRoomRef = doc(db, "chatRooms", chatId); // Updated collection reference to "chatRooms"
@@ -16,19 +16,16 @@ const Messages = ({ uid, chatId }) => {
 
     // Create a query to order messages by timestamp
     const messagesQuery = query(messagesCollection, orderBy("timestamp"));
-    
+
     // Subscribe to changes in the messages collection
     const unsubscribe = onSnapshot(messagesQuery, (snapshot) => {
       const messageData = [];
       snapshot.forEach((doc) => {
         const message = doc.data();
-        // Format the timestamp to a string (e.g., using toLocaleString())
-        const formattedTimestamp = new Date(message.timestamp.seconds * 1000).toLocaleString();
-        console.log(formattedTimestamp)
         messageData.push({
           id: doc.id,
           ...message,
-          timestamp: formattedTimestamp, // Updated timestamp to a formatted string
+          timestamp: message.timestamp, // Updated timestamp to a formatted string
         });
       });
       setMessages(messageData);
@@ -43,7 +40,7 @@ const Messages = ({ uid, chatId }) => {
   return (
     <div className="messages">
       {messages.map((message) => (
-        <Message key={message.id} message={message} uid={uid}/>
+        <Message key={message.id} message={message} uid={uid} chatId={chatId} />
       ))}
     </div>
   );

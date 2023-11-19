@@ -7,6 +7,7 @@
   font-weight: 700;
   font-style: normal;
 }
+
 //fonts for body text
 @font-face {
   font-family: "Poppins", sans-serif;
@@ -20,5 +21,12 @@
   font-family: "Gilroy";
   src: url("../../assets/fonts/Gilroy-ExtraBold.otf") format("otf");
   font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sora', sans-serif;
+  src: url("../../assets/fonts/Sora-Regular.ttf") format("ttf");
+  font-weight: 400;
   font-style: normal;
 }
