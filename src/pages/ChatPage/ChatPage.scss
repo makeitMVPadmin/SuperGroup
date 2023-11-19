@@ -1,16 +1,17 @@
-.chatpage{
-    background-color: aqua;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px orange solid;
-}
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
 
-.container{
-    border: 1px white solid;
-    height: 98vh;
-    background-color: white;
+.chatpage {
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__container {
     width: 100%;
+    height: 100%;
     display: flex;
+  }
 }

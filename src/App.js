@@ -9,7 +9,6 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 function App() {
 
   const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
-  console.log(clerkPubKey);
 
   const ClerkWithRoutes = () => {
     const navigate = useNavigate()
