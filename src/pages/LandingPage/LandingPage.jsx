@@ -108,6 +108,7 @@ const LandingPage = () => {
       setLinkedIn("");
       setFormSubmitted(false);
       event.target.reset();
+      window.alert("Form submitted successfully!");
     }
   };
 
@@ -253,9 +254,8 @@ const LandingPage = () => {
         >
           <div className="landing__label">
             <input
-              className={`landing__input ${
-                nameError !== "" && formSubmitted ? "landing__input-error" : ""
-              }`}
+              className={`landing__input ${nameError !== "" && formSubmitted ? "landing__input-error" : ""
+                }`}
               name="name"
               type="text"
               placeholder="Name"
@@ -268,11 +268,10 @@ const LandingPage = () => {
           <div className="landing__label">
             <input
               id="email"
-              className={`landing__input ${
-                (emailError !== "" || !isEmailValid(email)) && formSubmitted
-                  ? "landing__input-error"
-                  : ""
-              }`}
+              className={`landing__input ${(emailError !== "" || !isEmailValid(email)) && formSubmitted
+                ? "landing__input-error"
+                : ""
+                }`}
               name="email"
               type="text"
               placeholder="Email"
@@ -285,11 +284,10 @@ const LandingPage = () => {
           <div className="landing__label">
             <input
               id="linkedIn"
-              className={`landing__input ${
-                linkedInError !== "" && formSubmitted
-                  ? "landing__input-error"
-                  : ""
-              }`}
+              className={`landing__input ${linkedInError !== "" && formSubmitted
+                ? "landing__input-error"
+                : ""
+                }`}
               name="linkedIn"
               type="text"
               placeholder="LinkedIn (Optional)"
