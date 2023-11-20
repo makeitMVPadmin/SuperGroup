@@ -12,11 +12,11 @@ function App() {
 
   const ClerkWithRoutes = () => {
     const navigate = useNavigate()
-  
+
     return (
-      <ClerkProvider 
-      publishableKey={clerkPubKey}
-      navigate={(to) => navigate(to)}
+      <ClerkProvider
+        publishableKey={clerkPubKey}
+        navigate={(to) => navigate(to)}
       >
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -28,51 +28,51 @@ function App() {
             path="/sign-up/*"
             element={<SignUp redirectUrl={'/home'} routing="path" path="/sign-up" />}
           />
-        <Route
+          <Route
             path="/home"
             element={
-            <>
-            {/* <HomePage /> */}
-              <SignedIn>
-                <HomePage />
-              </SignedIn>
-               <SignedOut>
-                <RedirectToSignIn />
-             </SignedOut>
-            </>
+              <>
+                {/* <HomePage /> */}
+                <SignedIn>
+                  <HomePage />
+                </SignedIn>
+                <SignedOut>
+                  <RedirectToSignIn />
+                </SignedOut>
+              </>
             }
           />
           <Route
             path="/chat/:chatId"
             element={
-            <>
-            {/* <ChatPage /> */}
-              <SignedIn>
-                <ChatPage />
-              </SignedIn>
-               <SignedOut>
-                <RedirectToSignIn />
-             </SignedOut>
-            </>
+              <>
+                {/* <ChatPage /> */}
+                <SignedIn>
+                  <ChatPage />
+                </SignedIn>
+                <SignedOut>
+                  <RedirectToSignIn />
+                </SignedOut>
+              </>
             }
           />
           <Route
             path="/*"
             element={
-            <>
-            <NotFoundPage />
-            </>
-          }
+              <>
+                <NotFoundPage />
+              </>
+            }
           />
         </Routes>
       </ClerkProvider>
     )
-  
+
   }
   return (
-   <>
-    <ClerkWithRoutes />  
-      </>
+    <>
+      <ClerkWithRoutes />
+    </>
   );
 }
 

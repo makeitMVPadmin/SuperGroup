@@ -36,6 +36,14 @@
     font-size: 0.875rem;
     justify-content: flex-start;
     gap: .5rem;
+    margin-right: 50%;
+
+    &--other {
+      margin-left: 50%;
+      margin-left: 50%;
+      display: flex;
+      gap: 0.5rem;
+    }
   }
 
   &__content {
@@ -64,11 +72,13 @@
     margin-block-start: 0;
     margin-block-end: 0;
     margin-bottom: .5rem;
+    border: 2px solid #000;
 
     &--other {
       background-color: #EFEFEF;
       color: #000;
     }
+
   }
 
   &__content-name,
@@ -139,6 +149,15 @@
     // background-color: grey;
     flex-shrink: 0;
     border: 2px solid #000;
+
+    &--owner {
+      border-radius: 50%;
+      height: 59px;
+      width: 59px;
+      background-color: #F8D849;
+      flex-shrink: 0;
+
+    }
   }
 
   &.owner {
@@ -179,6 +198,7 @@
 
   /* YourMessageComponent.scss or YourMessageComponent.css */
   &__modal-overlay {
+    font-family: "Sora", sans-serif;
     position: fixed;
     top: 0;
     left: 0;
@@ -204,11 +224,13 @@
   }
 
   &__modal p {
+    font-family: "Sora", sans-serif;
     margin-bottom: 10px;
     margin-block-start: 0;
   }
 
   &__modal textarea {
+    font-family: "Sora", sans-serif;
     width: 99%;
     height: 100px;
     resize: vertical;
@@ -216,6 +238,7 @@
   }
 
   &__modal button {
+    font-family: "Sora", sans-serif;
     padding: 8px 16px;
     background-color: #0F4264;
     color: white;
@@ -224,6 +247,7 @@
     cursor: pointer;
     margin-top: .5rem;
     text-align: center;
+    font-weight: 600;
   }
 
   &__modal button:hover {
@@ -242,7 +266,7 @@
 }
 
 #message__ai-response {
-  border-radius: 0.625rem 0.625rem 0 0.625rem;
+  border-radius: 2rem 2rem 0 2rem;
 
 }
 

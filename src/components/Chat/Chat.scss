@@ -1,6 +1,12 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
 .chat {
   flex: 2;
+  height: 80vh;
+
   &__info {
     height: 4rem;
     background-color: $secondary-grey;
@@ -9,10 +15,12 @@
     justify-content: space-between;
     padding: 0 1rem;
     font-weight: 600;
+
     &-users {
       display: flex;
     }
   }
+
   &__container-x {
     height: 100%;
     width: 100%;
@@ -21,28 +29,36 @@
     padding-bottom: 2.19rem;
     padding-top: 1.37rem;
   }
+
   &__grand-title {
+    font-family: "Poppins", sans-serif;
     margin-left: 2.84rem;
     padding-bottom: 1.38rem;
     font-size: 1.875rem;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
+    margin-block-start: 0;
+    margin-block-end: 0;
   }
+
   &__saying {
-    color: #404040;
+    font-family: "Sora", sans-serif;
+    color: #0f4264;
     margin-left: 2.84rem;
     padding-bottom: 1.57rem;
-    font-size: 1.5625rem;
+    font-size: 1.25625rem;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 600;
     line-height: normal;
+    margin-block-start: 0;
+    margin-block-end: 0;
   }
 }
 
-.placeholder {
-  background-color: purple;
-  height: 1rem;
-  width: 1rem;
-  margin: 1rem;
-}
+// .placeholder {
+//   background-color: purple;
+//   height: 1rem;
+//   width: 1rem;
+//   margin: 1rem;
+// }

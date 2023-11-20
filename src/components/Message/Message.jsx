@@ -123,7 +123,8 @@ const Message = ({ message, uid, chatId }) => {
       {isCurrentUser ? (
         <div className="message__info">
           {/* Profile picture */}
-          <img src={user.imageUrl} className="message__profile" alt="profile picture of user" />
+          {/* <img src={user.imageUrl} className="message__profile" alt="profile picture of user" /> */}
+          <div className="message__profile--owner"></div>
           <div className="message__content">
             <p className="message__content-text" dangerouslySetInnerHTML={{ __html: highlightAIMention(text) }}></p>
             <div className={`message__content-user`}>
@@ -133,7 +134,7 @@ const Message = ({ message, uid, chatId }) => {
           </div>
         </div>
       ) : (
-        <div className="message__info">
+        <div className="message__info--other">
           <div className="message__content">
             <p className="message__content-text message__content-text--other" dangerouslySetInnerHTML={{ __html: highlightAIMention(text) }}></p>
             <div className={`message__content-user`}>
