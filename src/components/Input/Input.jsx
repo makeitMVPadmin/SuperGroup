@@ -53,7 +53,7 @@ const Input = ({ chatId }) => {
         placeholder="Type something..."
         value={messageText}
         onChange={(e) => setMessageText(e.target.value)}
-
+        onKeyDown={(e) => { if (e.key === 'Enter') handleSendMessage(); }}
       />
       {/* <img className="input__field-img" scr={mountain} /> */}
       <button className="input__btn"><img className="input__img" src={paper} /></button>
